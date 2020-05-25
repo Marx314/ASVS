@@ -13,7 +13,7 @@ Embedded/IoT devices should:
 ## Security Verification Requirements
 
 | # | Description | L1 | L2 | L3 | Since |
-| --- | --- | --- | --- | -- | -- |
+| :---: | :--- | :---: | :---: | :---: | :---: |
 | **C.1** | Verify that application layer debugging interfaces such USB, UART, and other serial variants are disabled or protected by a complex password. | ✓ | ✓ | ✓ | 4.0 |
 | **C.2** | Verify that cryptographic keys and certificates are unique to each individual device. | ✓ | ✓ | ✓ | 4.0 |
 | **C.3** | Verify that memory protection controls such as ASLR and DEP are enabled by the embedded/IoT operating system, if applicable. | ✓ | ✓ | ✓ | 4.0 |

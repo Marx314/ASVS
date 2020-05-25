@@ -13,7 +13,7 @@ Les dispositifs embarqués/implantés devraient :
 ## Exigences de vérification de la sécurité
 
 | # | Description | L1 | L2 | L3 | Depuis
-| --- | --- | --- | --- | -- | -- |
+| :---: | :--- | :---: | :---: | :---: | :---: |
 | **C.1** | Vérifiez que les interfaces de débogage de la couche application telles que les interfaces USB, UART et autres variantes série sont désactivées ou protégées par un mot de passe complexe. | ✓ | ✓ | ✓ | 4.0 |
 | **C.2** | Vérifier que les clés et certificats cryptographiques sont uniques à chaque appareil. | ✓ | ✓ | ✓ | 4.0 |
 | **C.3** | Vérifiez que les contrôles de protection de la mémoire tels que ASLR et DEP sont activés par le système d'exploitation embarqué/OT, le cas échéant. | ✓ | ✓ | ✓ | 4.0 |
