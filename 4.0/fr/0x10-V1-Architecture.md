@@ -50,7 +50,7 @@ Il s'agit d'un point de repère pour les futures exigences architecturales.
 
 ## V1.5 Exigences architecturales d'entrée et de sortie
 
-Dans la version 4.0, nous avons abandonné le terme "côté serveur" comme terme de #FIXME# limite de confiance chargé. La limite de confiance est toujours d'actualité - il est possible de contourner les décisions prises sur des navigateurs ou des appareils clients non fiables. Cependant, dans les déploiements architecturaux courants d'aujourd'hui, le point d'application de la confiance a considérablement changé. Par conséquent, lorsque le terme "couche de service de confiance" est utilisé dans l'ASVS, nous entendons tout point d'application de confiance, quel que soit son emplacement, tel qu'un microservice, une API sans serveur, côté serveur, une API de confiance sur un périphérique client qui a un démarrage sécurisé, des API partenaires ou externes, etc. 
+Dans la version 4.0, nous avons abandonné le terme "côté serveur" comme terme impliquant une confiance. La limite de confiance est toujours un  enjeu - il est possible de contourner les décisions prises sur des navigateurs ou des appareils clients non fiables. Cependant, dans les déploiements architecturaux courants d'aujourd'hui, le point d'application de la confiance a considérablement changé. Par conséquent, lorsque le terme "couche de service de confiance" est utilisé dans l'ASVS, nous entendons tout point d'application de confiance, quel que soit son emplacement, tel qu'un microservice, une API sans serveur, côté serveur, une API de confiance sur un périphérique client qui a un démarrage sécurisé, des API partenaires ou externes, etc. 
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
