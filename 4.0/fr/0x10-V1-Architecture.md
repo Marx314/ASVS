@@ -122,7 +122,7 @@ Il s'agit d'un point de repère pour les futures exigences architecturales.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.14.1** | #FIXME#Vérifier l'utilisation de comptes de système d'exploitation uniques ou spéciaux à faible privilège pour tous les composants d'application, services et serveurs. ([C3](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | 250 |
+| **1.14.1** | Vérifier l'utilisation d'un compte à faible privilège pour tous les composants d'application, services et serveurs. ([C3](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | 250 |
 | **1.14.2** | Vérifiez que les signatures binaires, les connexions de confiance et les terminaux vérifiés sont utilisés pour déployer les binaires sur les appareils distants. | | ✓ | ✓ | 923 |
 | **1.14.3** | Vérifier que les signatures binaires, les connexions de confiance et les nœuds vérifiés sont utilisés pour déployer des binaires sur des dispositifs distants. | | ✓ | ✓ | 494 |
 | **1.14.4** | Vérifier que le pipeline de construction signale les composants obsolètes ou peu sûrs et prend les mesures appropriées. | | ✓ | ✓ | 1104 |
