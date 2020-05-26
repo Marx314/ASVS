@@ -17,10 +17,10 @@ Toutes les communications avec les clients ne doivent avoir lieu que sur des voi
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **9.1.1** | Vérifiez que le TLS sécurisé est utilisé pour toutes les connexions des clients et ne revient pas à des protocoles non sécurisés ou non chiffrés. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | 319 |
-| **9.1.2** | Vérifiez à l'aide d'outils de test TLS en ligne ou actualisés que seuls les algorithmes, les chiffrages et les protocoles puissants sont activés, les algorithmes et les chiffrages les plus puissants étant définis de préférence. | ✓ | ✓ | ✓ | 326 |
-| **9.1.3** | Vérifiez que les anciennes versions des protocoles SSL et TLS, des algorithmes, des chiffres et de la configuration sont désactivées, comme SSLv2, SSLv3, ou TLS 1.0 et TLS 1.1. La dernière version de TLS doit être la suite de chiffrement préférée. | ✓ | ✓ | ✓ | 326 |
-| **9.1.4** | Pour les applications de client lourd, vérifiez que l'application utilise son propre magasin de certificats, ou qu'elle épingle le certificat ou la clé publique du terminal, et qu'elle n'établira pas de connexion avec des terminaux qui offrent un certificat ou une clé différente, même si elle est signée par une AC de confiance. | | | ✓ | 295 |
+| **9.1.1** | Vérifiez que le TLS sécurisé est utilisé pour toutes les connexions des clients et ne revient pas à des protocoles non sécurisés ou non chiffrés. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [319](https://cwe.mitre.org/data/definitions/319.html) |
+| **9.1.2** | Vérifiez à l'aide d'outils de test TLS en ligne ou actualisés que seuls les algorithmes, les chiffrages et les protocoles puissants sont activés, les algorithmes et les chiffrages les plus puissants étant définis de préférence. | ✓ | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **9.1.3** | Vérifiez que les anciennes versions des protocoles SSL et TLS, des algorithmes, des chiffres et de la configuration sont désactivées, comme SSLv2, SSLv3, ou TLS 1.0 et TLS 1.1. La dernière version de TLS doit être la suite de chiffrement préférée. | ✓ | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **9.1.4** | Pour les applications de client lourd, vérifiez que l'application utilise son propre magasin de certificats, ou qu'elle épingle le certificat ou la clé publique du terminal, et qu'elle n'établira pas de connexion avec des terminaux qui offrent un certificat ou une clé différente, même si elle est signée par une AC de confiance. | | | ✓ | [295](https://cwe.mitre.org/data/definitions/295.html) |
 
 ## V9.2 Exigences de sécurité des communications du serveur
 
@@ -28,11 +28,11 @@ Les communications entre serveurs ne se limitent pas à HTTP. Des connexions sé
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **9.2.1** | Vérifiez que les connexions vers et depuis le serveur utilisent des certificats TLS de confiance. Lorsque des certificats générés en interne ou auto-signés sont utilisés, le serveur doit être configuré pour ne faire confiance qu'à des AC internes spécifiques et à des certificats auto-signés spécifiques. Tous les autres doivent être rejetés. | | ✓ | ✓ | 295 |
-| **9.2.2** | Vérifier que les communications cryptées telles que TLS sont utilisées pour toutes les connexions entrantes et sortantes, y compris pour les ports de gestion, la surveillance, l'authentification, les appels d'API ou de service web, les connexions de base de données, de nuage, sans serveur, d'ordinateur central, externes et de partenaires. Le serveur ne doit pas se rabattre sur des protocoles non sécurisés ou non chiffrés. | | ✓ | ✓ | 319 |
-| **9.2.3** | Vérifiez que toutes les connexions cryptées à des systèmes externes qui impliquent des informations ou des fonctions sensibles sont authentifiées. | | ✓ | ✓ | 287 |
-| **9.2.4** | Vérifiez que la révocation de certification appropriée, telle que le protocol OCSP (Online Certificate Status Protocol), est activée et configurée. | | ✓ | ✓ | 299 |
-| **9.2.5** | Vérifiez que les échecs de connexion TLS en arrière-plan sont enregistrés. | | | ✓ | 544 |
+| **9.2.1** | Vérifiez que les connexions vers et depuis le serveur utilisent des certificats TLS de confiance. Lorsque des certificats générés en interne ou auto-signés sont utilisés, le serveur doit être configuré pour ne faire confiance qu'à des AC internes spécifiques et à des certificats auto-signés spécifiques. Tous les autres doivent être rejetés. | | ✓ | ✓ | [295](https://cwe.mitre.org/data/definitions/295.html) |
+| **9.2.2** | Vérifier que les communications cryptées telles que TLS sont utilisées pour toutes les connexions entrantes et sortantes, y compris pour les ports de gestion, la surveillance, l'authentification, les appels d'API ou de service web, les connexions de base de données, de nuage, sans serveur, d'ordinateur central, externes et de partenaires. Le serveur ne doit pas se rabattre sur des protocoles non sécurisés ou non chiffrés. | | ✓ | ✓ | [319](https://cwe.mitre.org/data/definitions/319.html) |
+| **9.2.3** | Vérifiez que toutes les connexions cryptées à des systèmes externes qui impliquent des informations ou des fonctions sensibles sont authentifiées. | | ✓ | ✓ | [287](https://cwe.mitre.org/data/definitions/287.html) |
+| **9.2.4** | Vérifiez que la révocation de certification appropriée, telle que le protocol OCSP (Online Certificate Status Protocol), est activée et configurée. | | ✓ | ✓ | [299](https://cwe.mitre.org/data/definitions/299.html) |
+| **9.2.5** | Vérifiez que les échecs de connexion TLS en arrière-plan sont enregistrés. | | | ✓ | [544](https://cwe.mitre.org/data/definitions/544.html) |
 
 ## Références
 
