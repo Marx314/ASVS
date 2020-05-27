@@ -76,7 +76,7 @@ Les exigences architecturales sont intrinsèques à toute la base de code, et do
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.7.1** | Vérifier qu'un format et une approche d'enregistrement communs sont utilisés dans tout le système.  ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [1009](https://cwe.mitre.org/data/definitions/1009.html) |
+| **1.7.1** | Vérifier qu'un format de journalisation communs soit utilisés dans le système.  ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [1009](https://cwe.mitre.org/data/definitions/1009.html) |
 | **1.7.2** | Vérifiez que les journaux sont transmis de manière sécurisée à un système de préférence distant pour analyse, détection, alerte et escalade. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | |
 
 ## V1.8 Exigences architecturales en matière de protection des données et de la vie privée
@@ -103,7 +103,7 @@ Les exigences architecturales sont intrinsèques à toute la base de code, et do
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.11.1** | Vérifier la définition et la documentation de tous les composants de l'application en ce qui concerne les fonctions commerciales ou de sécurité qu'ils fournissent. | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
+| **1.11.1** | Vérifier la définition et la documentation de tous les composants de l'application en ce qui concerne la logique d'affaire ou de sécurité qu'ils fournissent. | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
 | **1.11.2** | Vérifiez que tous les flux de logique métier de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, ne partagent pas un état non synchronisé. | | ✓ | ✓ | [362](https://cwe.mitre.org/data/definitions/362.html) |
 | **1.11.3** | Vérifier que tous les flux de logique d'entreprise de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, sont sécurisés et résistants aux conditions de course au temps de contrôle et au temps d'utilisation. | | | ✓ | [367](https://cwe.mitre.org/data/definitions/367.html) |
 
