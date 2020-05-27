@@ -25,10 +25,10 @@ V7.1 couvre le Top 10 de l'OWASP 2017:A10. Comme 2017:A10 et cette section ne so
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **7.1.1** | Vérifiez que la demande n'enregistre pas les références ou les détails de paiement. Les jetons de session ne doivent être stockés dans les journaux que sous une forme hachée et irréversible. ([C9, C10](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [532](https://cwe.mitre.org/data/definitions/532.html) |
-| **7.1.2** | Vérifiez que l'application n'enregistre pas d'autres données sensibles telles que définies par les lois locales sur la protection de la vie privée ou la politique de sécurité pertinente. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [532](https://cwe.mitre.org/data/definitions/532.html) |
-| **7.1.3** | Vérifiez que l'application enregistre les événements pertinents pour la sécurité, y compris les événements d'authentification réussis et échoués, les échecs de contrôle d'accès, les échecs de désérialisation et les échecs de validation des entrées. ([C5, C7](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
-| **7.1.4** | Vérifiez que chaque événement consigné dans le journal contient les informations nécessaires pour permettre une enquête détaillée sur la chronologie de l'événement. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
+| **7.1.1** | Vérifiez que la demande n'enregistre pas les références ou les détails de paiement. Les jetons de session ne doivent être stockés dans les journaux que sous une forme hachée et irréversible. ([C9, C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [532](https://cwe.mitre.org/data/definitions/532.html) |
+| **7.1.2** | Vérifiez que l'application n'enregistre pas d'autres données sensibles telles que définies par les lois locales sur la protection de la vie privée ou la politique de sécurité pertinente. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [532](https://cwe.mitre.org/data/definitions/532.html) |
+| **7.1.3** | Vérifiez que l'application enregistre les événements pertinents pour la sécurité, y compris les événements d'authentification réussis et échoués, les échecs de contrôle d'accès, les échecs de désérialisation et les échecs de validation des entrées. ([C5, C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
+| **7.1.4** | Vérifiez que chaque événement consigné dans le journal contient les informations nécessaires pour permettre une enquête détaillée sur la chronologie de l'événement. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
 
 ## V7.2 Exigences de traitement des journaux
 
@@ -50,10 +50,10 @@ Les journaux qui peuvent être trivialement modifiés ou supprimés sont inutile
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **7.3.1** | Vérifiez que l'application encode correctement les données fournies par l'utilisateur pour éviter l'injection de logs. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [117](https://cwe.mitre.org/data/definitions/117.html) |
-| **7.3.2** | Vérifiez que tous les événements sont protégés contre l'injection lorsqu'ils sont visualisés dans le logiciel de visualisation des journaux. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [117](https://cwe.mitre.org/data/definitions/117.html) |
-| **7.3.3** | Vérifiez que les journaux de sécurité sont protégés contre tout accès et toute modification non autorisés. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [200](https://cwe.mitre.org/data/definitions/200.html) |
-| **7.3.4** | Vérifiez que les sources de temps sont synchronisées avec l'heure et le fuseau horaire corrects. Envisager sérieusement de n'enregistrer les données qu'en UTC si les systèmes sont globaux pour faciliter l'analyse criminalistique post-incident. ([C9](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | |
+| **7.3.1** | Vérifiez que l'application encode correctement les données fournies par l'utilisateur pour éviter l'injection de logs. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [117](https://cwe.mitre.org/data/definitions/117.html) |
+| **7.3.2** | Vérifiez que tous les événements sont protégés contre l'injection lorsqu'ils sont visualisés dans le logiciel de visualisation des journaux. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [117](https://cwe.mitre.org/data/definitions/117.html) |
+| **7.3.3** | Vérifiez que les journaux de sécurité sont protégés contre tout accès et toute modification non autorisés. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [200](https://cwe.mitre.org/data/definitions/200.html) |
+| **7.3.4** | Vérifiez que les sources de temps sont synchronisées avec l'heure et le fuseau horaire corrects. Envisager sérieusement de n'enregistrer les données qu'en UTC si les systèmes sont globaux pour faciliter l'analyse criminalistique post-incident. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | |
 
 Remarque : L'encodage des journaux (7.3.1) est difficile à tester et à examiner à l'aide d'outils dynamiques automatisés et de tests de pénétration, mais les architectes, les développeurs et les réviseurs de code source devraient le considérer comme une exigence de niveau 1.
 
@@ -63,9 +63,9 @@ L'objectif du traitement des erreurs est de permettre à l'application de fourni
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **7.4.1** | Vérifiez qu'un message générique s'affiche lorsqu'une erreur inattendue ou sensible à la sécurité se produit, éventuellement avec un identifiant unique que le personnel de soutien peut utiliser pour enquêter.  ([C10](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [210](https://cwe.mitre.org/data/definitions/210.html) |
-| **7.4.2** | Vérifiez que le traitement des exceptions est utilisé dans toute le code source pour tenir compte des conditions d'erreur prévues et imprévues. ([C10](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [544](https://cwe.mitre.org/data/definitions/544.html) |
-| **7.4.3** | Vérifiez qu'un gestionnaire d'erreurs de "dernier recours" est défini, qui prendra en compte toutes les exceptions non traitées. ([C10](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [431](https://cwe.mitre.org/data/definitions/431.html) |
+| **7.4.1** | Vérifiez qu'un message générique s'affiche lorsqu'une erreur inattendue ou sensible à la sécurité se produit, éventuellement avec un identifiant unique que le personnel de soutien peut utiliser pour enquêter.  ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [210](https://cwe.mitre.org/data/definitions/210.html) |
+| **7.4.2** | Vérifiez que le traitement des exceptions est utilisé dans toute le code source pour tenir compte des conditions d'erreur prévues et imprévues. ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [544](https://cwe.mitre.org/data/definitions/544.html) |
+| **7.4.3** | Vérifiez qu'un gestionnaire d'erreurs de "dernier recours" est défini, qui prendra en compte toutes les exceptions non traitées. ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [431](https://cwe.mitre.org/data/definitions/431.html) |
 
 Note : Certains langages, tels que Swift et Go - et selon la pratique courante de conception - de nombreux langages fonctionnels, ne prennent pas en charge les exceptions ou les gestionnaires d'événements de dernier recours. Dans ce cas, les architectes et les développeurs doivent utiliser un modèle, un langage ou un cadre convivial pour s'assurer que les applications peuvent gérer en toute sécurité des événements exceptionnels, inattendus ou liés à la sécurité.
 

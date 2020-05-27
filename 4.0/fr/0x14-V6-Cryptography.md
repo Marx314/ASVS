@@ -27,9 +27,9 @@ Bien que cette section ne soit pas facilement testée en termes de pénétration
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **6.2.1** | Vérifiez que tous les modules cryptographiques échouent en toute sécurité, et que les erreurs sont traitées de manière à ne pas permettre les attaques de type "Padding Oracle". | ✓ | ✓ | ✓ | [310](https://cwe.mitre.org/data/definitions/310.html) |
-| **6.2.2** | Vérifiez que des algorithmes, des modes et des bibliothèques cryptographiques éprouvés par l'industrie ou approuvés par le gouvernement sont utilisés, au lieu de la cryptographie codée sur mesure. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [327](https://cwe.mitre.org/data/definitions/327.html) |
+| **6.2.2** | Vérifiez que des algorithmes, des modes et des bibliothèques cryptographiques éprouvés par l'industrie ou approuvés par le gouvernement sont utilisés, au lieu de la cryptographie codée sur mesure. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [327](https://cwe.mitre.org/data/definitions/327.html) |
 | **6.2.3** | Vérifiez que le vecteur d'initialisation du chiffrement, la configuration du chiffrement et les modes de blocage sont configurés de manière sécurisée en utilisant les derniers conseils. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
-| **6.2.4** | Vérifiez que les algorithmes de chiffrement ou de hachage, les longueurs de clé, les rondes, les chiffres ou les modes, peuvent être reconfigurés, mis à niveau ou échangés à tout moment, pour se protéger contre les failles cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **6.2.4** | Vérifiez que les algorithmes de chiffrement ou de hachage, les longueurs de clé, les rondes, les chiffres ou les modes, peuvent être reconfigurés, mis à niveau ou échangés à tout moment, pour se protéger contre les failles cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
 | **6.2.5** | Vérifiez que les modes de blocs non sécurisés connus (c'est-à-dire ECB, etc.), les modes de remplissage (c'est-à-dire PKCS#1 v1.5, etc.), les chiffres avec de petites tailles de blocs (c'est-à-dire Triple-DES, Blowfish, etc.) et les algorithmes de hachage faibles (c'est-à-dire MD5, SHA1, etc.) ne sont pas utilisés, sauf si cela est nécessaire pour la rétrocompatibilité. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
 | **6.2.6** | Vérifiez que les nonces, vecteurs d'initialisation et autres numéros à usage unique ne doivent pas être utilisés plus d'une fois avec une clé de cryptage donnée. La méthode de génération doit être appropriée à l'algorithme utilisé. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
 | **6.2.7** | Vérifier que les données cryptées sont authentifiées par des signatures, des modes de chiffrement authentifiés ou le HMAC pour s'assurer que le texte chiffré n'est pas altéré par une partie non autorisée. | | | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
@@ -50,13 +50,13 @@ La véritable génération de nombres pseudo-aléatoires (PRNG) est incroyableme
 Bien que cette section ne soit pas facilement testée, les développeurs devraient considérer toute cette section comme obligatoire même si la L1 est absente de la plupart des éléments.
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **6.4.1** | Vérifiez qu'une solution de gestion des secrets, telle qu'une voûte à clés, est utilisée pour créer, stocker, contrôler l'accès aux secrets et les détruire en toute sécurité. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) |
-| **6.4.2** | Vérifiez que le matériel clé ne soit pas exposé à l'application mais utilise plutôt un module de sécurité isolé comme un coffre-fort pour les opérations cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
+| **6.4.1** | Vérifiez qu'une solution de gestion des secrets, telle qu'une voûte à clés, est utilisée pour créer, stocker, contrôler l'accès aux secrets et les détruire en toute sécurité. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) |
+| **6.4.2** | Vérifiez que le matériel clé ne soit pas exposé à l'application mais utilise plutôt un module de sécurité isolé comme un coffre-fort pour les opérations cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
 
 ## Références
 
 Pour plus d'informations, voir aussi :
 
 * [OWASP Testing Guide 4.0: Testing for weak Cryptography](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/README.html)
-* [OWASP Cheat Sheet: Cryptographic Storage](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_Storage_Cheat_Sheet.md)
+* [OWASP Cheat Sheet: Cryptographic Storage](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)
 * [FIPS 140-2](https://csrc.nist.gov/publications/detail/fips/140/2/final)

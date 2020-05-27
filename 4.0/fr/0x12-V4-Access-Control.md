@@ -16,9 +16,9 @@ L'autorisation est le concept qui consiste à ne permettre l'accès aux ressourc
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **4.1.1** | Vérifiez que l'application applique les règles de contrôle d'accès sur une couche de service de confiance, en particulier si le contrôle d'accès côté client est présent et pourrait être contourné. | ✓ | ✓ | ✓ | [602](https://cwe.mitre.org/data/definitions/602.html) |
 | **4.1.2** | Vérifier que tous les attributs des utilisateurs et des données et les informations sur les politiques utilisées par les contrôles d'accès ne peuvent être manipulés par les utilisateurs finaux, sauf autorisation spécifique. | ✓ | ✓ | ✓ | [639](https://cwe.mitre.org/data/definitions/639.html) |
-| **4.1.3** | Vérifier que le principe du moindre privilège existe - les utilisateurs ne doivent pouvoir accéder qu'aux fonctions, fichiers de données, URL, contrôleurs, services et autres ressources pour lesquels ils possèdent une autorisation spécifique. Cela implique une protection contre l'usurpation et l'élévation des privilèges. ([C7](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [285](https://cwe.mitre.org/data/definitions/285.html) |
-| **4.1.4** | Vérifiez que le principe de refus par défaut existe, selon lequel les nouveaux utilisateurs/rôles commencent avec des autorisations minimales ou nulles et les utilisateurs/rôles ne reçoivent pas l'accès aux nouvelles fonctionnalités tant que l'accès n'est pas explicitement attribué.  ([C7](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [276](https://cwe.mitre.org/data/definitions/276.html) |
-| **4.1.5** | Vérifier que les contrôles d'accès échouent de manière sûre, y compris lorsqu'une exception se produit. ([C10](https://owasp.org/www-project-proactive-controls/#tab=Formal_Numbering)) | ✓ | ✓ | ✓ | [285](https://cwe.mitre.org/data/definitions/285.html) |
+| **4.1.3** | Vérifier que le principe du moindre privilège existe - les utilisateurs ne doivent pouvoir accéder qu'aux fonctions, fichiers de données, URL, contrôleurs, services et autres ressources pour lesquels ils possèdent une autorisation spécifique. Cela implique une protection contre l'usurpation et l'élévation des privilèges. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [285](https://cwe.mitre.org/data/definitions/285.html) |
+| **4.1.4** | Vérifiez que le principe de refus par défaut existe, selon lequel les nouveaux utilisateurs/rôles commencent avec des autorisations minimales ou nulles et les utilisateurs/rôles ne reçoivent pas l'accès aux nouvelles fonctionnalités tant que l'accès n'est pas explicitement attribué.  ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [276](https://cwe.mitre.org/data/definitions/276.html) |
+| **4.1.5** | Vérifier que les contrôles d'accès échouent de manière sûre, y compris lorsqu'une exception se produit. ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [285](https://cwe.mitre.org/data/definitions/285.html) |
 
 ## V4.2 Contrôle d'accès au niveau des opérations
 
@@ -40,6 +40,6 @@ L'autorisation est le concept qui consiste à ne permettre l'accès aux ressourc
 Pour plus d'informations, voir aussi :
 
 * [OWASP Testing Guide 4.0: Authorization](https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/05-Authorization_Testing/README.html)
-* [OWASP Cheat Sheet: Access Control](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Access_Control_Cheat_Sheet.md)
-* [OWASP CSRF Cheat Sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md)
-* [OWASP REST Cheat Sheet](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Security_Cheat_Sheet.md)
+* [OWASP Cheat Sheet: Access Control](https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html)
+* [OWASP CSRF Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+* [OWASP REST Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
