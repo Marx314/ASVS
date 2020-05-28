@@ -632,18 +632,18 @@ La gestion des sessions basée sur des jetons comprend les clés JWT, OAuth, SAM
 
 | # | Description | L1 | L2 | L3 | CWE | [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html) |
 | :---: | :--- | :---: | :---:| :---: | :---: | :---: |
-| **3.5.1** | Vérifiez que l'application ne traite pas les jetons OAuth et refresh -- de leur propre -- comme la présence de l'abonné et permet aux utilisateurs de mettre fin aux relations de confiance avec les applications liées.  | | ✓ | ✓ | [290](https://cwe.mitre.org/data/definitions/290.html) | 7.1.2 |
-| **3.5.2** | Vérifiez que l'application utilise des jetons de session plutôt que des secrets et des clés d'API statiques, sauf dans le cas d'anciennes implémentations. | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) | |
+| **3.5.1** | Vérifiez que l'application ne valide pas les jetons OAuth et refresh -- par eux-même -- comme la présence de l'abonné et permet aux utilisateurs de mettre fin aux relations de confiance avec les applications liées.  | | ✓ | ✓ | [290](https://cwe.mitre.org/data/definitions/290.html) | 7.1.2 |
+| **3.5.2** | Vérifiez que l'application utilise des jetons de session plutôt que des secrets et des clés d'API statiques, sauf dans le cas d'anciennes implémentations(legacy). | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) | |
 | **3.5.3** | Vérifiez que les jetons de session sans état utilisent les signatures numériques, le cryptage et d'autres contre-mesures pour se protéger contre les attaques par altération, mise sous enveloppe, rediffusion, chiffrement nul et substitution de clé. | | ✓ | ✓ | [345](https://cwe.mitre.org/data/definitions/345.html) | |
 
 ## V3.6 Re-authentification d'une fédération ou d'une assertion
 
-Cette section concerne les personnes qui écrivent le code de la partie dépendante (RP) ou du fournisseur de services d'accréditation (CSP). Si vous comptez sur un code mettant en œuvre ces caractéristiques, assurez-vous que ces questions sont traitées correctement.
+Cette section concerne les personnes qui écrivent le code de la partie de relais (RP) ou du fournisseur de services d'accréditation (CSP). Si vous comptez sur un code mettant en œuvre ces caractéristiques, assurez-vous que ces questions sont traitées correctement.
 
 | # | Description | L1 | L2 | L3 | CWE | [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html) |
 | :---: | :--- | :---: | :---:| :---: | :---: | :---: |
 | **3.6.1** | Vérifier que les parties qui se fient à la procédure précisent le délai maximal d'authentification aux fournisseurs de services d'authentification (CSP) et que ces derniers ré-authentifient l'abonné s'ils n'ont pas utilisé de session pendant cette période. | | | ✓ | [613](https://cwe.mitre.org/data/definitions/613.html) | 7.2.1 |
-| **3.6.2** | Vérifier que les fournisseurs de services d'accréditation (CSP) informent les parties ayant fait confiance au dernier événement d'authentification, afin de permettre aux RP de déterminer s'ils doivent ré-authentifier l'utilisateur. | | | ✓ | 613| 7.2.1 |
+| **3.6.2** | Vérifier que les fournisseurs de services d'accréditation (CSP) informent les parties ayant fait confiance au dernier événement d'authentification, afin de permettre aux RP de déterminer s'ils doivent ré-authentifier l'utilisateur. | | | ✓ | (https://cwe.mitre.org/data/definitions/613.html) | 7.2.1 |
 
 ## V3.7 Défenses contre l'exploitation de la gestion des sessions
 
@@ -741,14 +741,14 @@ Des contrôles de validation des entrées correctement mis en œuvre, utilisant 
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **5.2.1** | Vérifiez que toutes les entrées HTML non fiables provenant d'éditeurs WYSIWYG ou similaires sont correctement nettoyées avec une bibliothèque ou une fonction de framework de nettoyage HTML. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
-| **5.2.2** | Vérifiez que les données non structurées sont aseptisées afin d'appliquer les mesures de sécurité telles que les caractères et la longueur autorisés. | ✓ | ✓ | ✓ | [138](https://cwe.mitre.org/data/definitions/138.html) |
-| **5.2.3** | Vérifiez que l'application désinfecte les entrées de l'utilisateur avant de passer aux systèmes de messagerie pour protéger contre l'injection SMTP ou IMAP. | ✓ | ✓ | ✓ | [147](https://cwe.mitre.org/data/definitions/147.html) |
-| **5.2.4** | Vérifiez que l'application évite l'utilisation de eval() ou d'autres fonctions d'exécution de code dynamique. Lorsqu'il n'y a pas d'alternative, toute entrée utilisateur incluse doit être nettoyée ou mise en sandbox avant d'être exécutée. | ✓ | ✓ | ✓ | [95](https://cwe.mitre.org/data/definitions/95.html) |
+| **5.2.1** | Vérifiez que toutes les entrées HTML non fiables provenant d'éditeurs WYSIWYG ou similaires sont correctement assainit avec une bibliothèque ou une fonction de framework de nettoyage HTML. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
+| **5.2.2** | Vérifiez que les données non structurées sont assainit afin d'appliquer les mesures de sécurité telles que les caractères et la longueur autorisés. | ✓ | ✓ | ✓ | [138](https://cwe.mitre.org/data/definitions/138.html) |
+| **5.2.3** | Vérifiez que l'application assainit les entrées de l'utilisateur avant de passer aux systèmes de messagerie pour protéger contre l'injection SMTP ou IMAP. | ✓ | ✓ | ✓ | [147](https://cwe.mitre.org/data/definitions/147.html) |
+| **5.2.4** | Vérifiez que l'application évite l'utilisation de eval() ou d'autres fonctions d'exécution de code dynamique. Lorsqu'il n'y a pas d'alternative, toute entrée utilisateur incluse doit être assainit ou mise en sandbox avant d'être exécutée. | ✓ | ✓ | ✓ | [95](https://cwe.mitre.org/data/definitions/95.html) |
 | **5.2.5** | Vérifiez que l'application protège contre les attaques par injection de modèles en veillant à ce que toute entrée de l'utilisateur incluse soit aseptisée ou mise en bac à sable. | ✓ | ✓ | ✓ | [94](https://cwe.mitre.org/data/definitions/94.html) |
 | **5.2.6** | Vérifier que l'application protège contre les attaques SSRF, en validant ou en assainissant les données non fiables ou les métadonnées de fichiers HTTP, comme les noms de fichiers et les champs de saisie d'URL, utiliser la liste blanche des protocoles, domaines, chemins et ports. | ✓ | ✓ | ✓ | [918](https://cwe.mitre.org/data/definitions/918.html) |
 | **5.2.7** | Vérifiez que l'application assainit, désactive ou met en place une isolation (sandbox) pour le contenu scriptable fourni par l'utilisateur (Scalable Vector Graphics - SVG), en particulier en ce qui concerne les XSS résultant de scripts natif au code présent et foreignObject. | ✓ | ✓ | ✓ | [159](https://cwe.mitre.org/data/definitions/159.html) |
-| **5.2.8** | Vérifiez que l'application désinfecte, désactive ou met en sandbox le contenu des scripts ou des modèles d'expression fournis par l'utilisateur, tels que les feuilles de style Markdown, CSS ou XSL, le BBCode ou autres. | ✓ | ✓ | ✓ | [94](https://cwe.mitre.org/data/definitions/94.html) |
+| **5.2.8** | Vérifiez que l'application assainit, désactive ou met en sandbox le contenu des scripts ou des modèles d'expression fournis par l'utilisateur, tels que les feuilles de style Markdown, CSS ou XSL, le BBCode ou autres. | ✓ | ✓ | ✓ | [94](https://cwe.mitre.org/data/definitions/94.html) |
 
 ## V5.3 Exigences en matière d'encodage de sortie et de prévention des injections
 
@@ -757,8 +757,8 @@ L'encodage de la sortie à proximité ou à proximité de l'interprète utilisé
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **5.3.1** | Vérifiez que l'encodage de sortie est pertinent pour l'interprète et le contexte requis. Par exemple, utilisez des encodeurs spécifiques pour les valeurs HTML, les attributs HTML, JavaScript, les paramètres URL, les en-têtes HTTP, SMTP et autres selon le contexte, en particulier à partir d'entrées non fiables (par exemple les noms avec Unicode ou apostrophes, comme ねこ ou O'Hara). ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
-| **5.3.2** | Vérifiez que l'encodage de sortie préserve le jeu de caractères et la locale choisis par l'utilisateur, de sorte que tout point de caractère Unicode soit valide et traité en toute sécurité. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [176](https://cwe.mitre.org/data/definitions/176.html) |
-| **5.3.3** | Vérifiez que l'échappement des sorties en fonction du contexte, de préférence automatisé - ou au pire, manuel - protège contre le XSS réfléchi, stocké et basé sur le DOM. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [79](https://cwe.mitre.org/data/definitions/79.html) |
+| **5.3.2** | Vérifiez que l'encodage de sortie préserve le jeu de caractères et la langue choisis par l'utilisateur, de sorte que tout point de caractère Unicode soit valide et traité en toute sécurité. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [176](https://cwe.mitre.org/data/definitions/176.html) |
+| **5.3.3** | Vérifiez que l'encodage des sorties en fonction du contexte, de préférence automatisé - ou au pire, manuel - protège contre le XSS réfléchi, stocké et basé sur le DOM. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [79](https://cwe.mitre.org/data/definitions/79.html) |
 | **5.3.4** | Vérifier que la sélection de données ou les requêtes de base de données (par exemple SQL, HQL, ORM, NoSQL) utilisent des requêtes paramétrées, des ORM, des cadres d'entités, ou sont autrement protégées contre les attaques par injection de base de données. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [89](https://cwe.mitre.org/data/definitions/89.html) |
 | **5.3.5** | Vérifiez que, lorsque des mécanismes paramétrés ou plus sûrs ne sont pas présents, un encodage de sortie spécifique au contexte est utilisé pour se protéger contre les attaques par injection, comme l'utilisation de l'échappement SQL pour se protéger contre l'injection SQL. ([C3, C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [89](https://cwe.mitre.org/data/definitions/89.html) |
 | **5.3.6** | Vérifiez que l'application protège contre les attaques par injection de JavaScript ou de JSON, y compris pour les attaques d'évaluation, les includes JavaScript distants, les contournements de la politique de sécurité du contenu (CSP), les DOM XSS et l'évaluation des expressions JavaScript. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | ✓ | ✓ | ✓ | [830](https://cwe.mitre.org/data/definitions/830.html) |
@@ -778,7 +778,6 @@ Les exigences suivantes ne s'appliquent que lorsque l'application utilise un lan
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **5.4.1** | Vérifiez que l'application utilise une chaîne de caractères à mémoire sécurisée, une copie mémoire sécurisée et l'arithmétique des pointeurs pour détecter ou empêcher les débordements de pile, de mémoire tampon ou de tas. | | ✓ | ✓ | [120](https://cwe.mitre.org/data/definitions/120.html) |
-| **5.4.2** | Vérifiez que les chaînes de format ne prennent pas d'entrée potentiellement hostile, et sont constantes. | | ✓ | ✓ | 
 | **5.4.2** | Vérifiez que les chaînes de format ne prennent pas d'entrée potentiellement hostile, et sont constantes. | | ✓ | ✓ | [134](https://cwe.mitre.org/data/definitions/134.html) |
 | **5.4.3** | Vérifiez que les techniques de validation des signes, des plages et des entrées sont utilisées pour éviter les débordements d'entiers. | | ✓ | ✓ | [190](https://cwe.mitre.org/data/definitions/190.html) |
 
@@ -850,12 +849,12 @@ Bien que cette section ne soit pas facilement testée en termes de pénétration
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **6.2.1** | Vérifiez que tous les modules cryptographiques échouent en toute sécurité, et que les erreurs sont traitées de manière à ne pas permettre les attaques de type "Padding Oracle". | ✓ | ✓ | ✓ | [310](https://cwe.mitre.org/data/definitions/310.html) |
-| **6.2.2** | Vérifiez que des algorithmes, des modes et des bibliothèques cryptographiques éprouvés par l'industrie ou approuvés par le gouvernement sont utilisés, au lieu de la cryptographie codée sur mesure. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [327](https://cwe.mitre.org/data/definitions/327.html) |
+| **6.2.2** | Vérifiez que des algorithmes, des bibliothèques cryptographiques et des modes éprouvés par l'industrie ou approuvés par le gouvernement sont utilisés, au lieu de la cryptographie codée sur mesure. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [327](https://cwe.mitre.org/data/definitions/327.html) |
 | **6.2.3** | Vérifiez que le vecteur d'initialisation du chiffrement, la configuration du chiffrement et les modes de blocage sont configurés de manière sécurisée en utilisant les derniers conseils. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
-| **6.2.4** | Vérifiez que les algorithmes de chiffrement ou de hachage, les longueurs de clé, les rondes, les chiffres ou les modes, peuvent être reconfigurés, mis à niveau ou échangés à tout moment, pour se protéger contre les failles cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
-| **6.2.5** | Vérifiez que les modes de blocs non sécurisés connus (c'est-à-dire ECB, etc.), les modes de remplissage (c'est-à-dire PKCS#1 v1.5, etc.), les chiffres avec de petites tailles de blocs (c'est-à-dire Triple-DES, Blowfish, etc.) et les algorithmes de hachage faibles (c'est-à-dire MD5, SHA1, etc.) ne sont pas utilisés, sauf si cela est nécessaire pour la rétrocompatibilité. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **6.2.4** | Vérifiez que les algorithmes de chiffrement ou de hachage, les longueurs de clé, le nombre de rondes, les chiffrements ou les modes, peuvent être reconfigurés, mis à niveau ou échangés à tout moment, pour se protéger contre les failles cryptographiques. ([C8](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **6.2.5** | Vérifiez que les modes de blocs non sécurisés connus (c'est-à-dire ECB, etc.), les modes de remplissage (c'est-à-dire PKCS#1 v1.5, etc.), les chiffrements avec des blocs de petites tailles (c'est-à-dire Triple-DES, Blowfish, etc.) et les algorithmes de hachage faibles (c'est-à-dire MD5, SHA1, etc.) ne sont pas utilisés, sauf si cela est nécessaire pour la rétrocompatibilité. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
 | **6.2.6** | Vérifiez que les nonces, vecteurs d'initialisation et autres numéros à usage unique ne doivent pas être utilisés plus d'une fois avec une clé de cryptage donnée. La méthode de génération doit être appropriée à l'algorithme utilisé. | | ✓ | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
-| **6.2.7** | Vérifier que les données cryptées sont authentifiées par des signatures, des modes de chiffrement authentifiés ou le HMAC pour s'assurer que le texte chiffré n'est pas altéré par une partie non autorisée. | | | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
+| **6.2.7** | Vérifier que les données cryptées sont authentifiées par des signatures, des modes de chiffrement authentifiés ou le [HMAC](https://en.wikipedia.org/wiki/HMAC) pour s'assurer que le texte chiffré n'est pas altéré par une partie non autorisée. | | | ✓ | [326](https://cwe.mitre.org/data/definitions/326.html) |
 | **6.2.8** | Vérifiez que toutes les opérations cryptographiques sont à temps constant, sans opérations de "court-circuit" dans les comparaisons, les calculs ou les retours, afin d'éviter les fuites d'informations. | | | ✓ | [385](https://cwe.mitre.org/data/definitions/385.html) |
 
 ## V6.3 Valeurs aléatoires
@@ -1088,7 +1087,7 @@ Les principaux développeurs doivent régulièrement examiner les vérifications
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers non sécurisées et les connexions réseau. | | | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
+| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers et les connexions réseau non sécurisées. | | | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
 
 ## V10.2 Recherche de code malveillant
 
@@ -1137,14 +1136,14 @@ La sécurité de la logique commerciale est tellement individuelle à chaque dem
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **11.1.1** | Vérifier que l'application ne traitera que les flux de logique métier pour le même utilisateur dans l'ordre séquentiel des étapes et sans sauter d'étapes.| ✓ | ✓ | ✓ | [841](https://cwe.mitre.org/data/definitions/841.html) |
-| **11.1.2** | Vérifier que la demande ne traitera que les flux logiques commerciaux, toutes les étapes étant traitées en temps humain réaliste, c'est-à-dire que les transactions ne sont pas soumises trop rapidement.| ✓ | ✓ | ✓ | [799](https://cwe.mitre.org/data/definitions/799.html) |
+| **11.1.1** | Vérifier que l'application traitera seulement les flux de logique métier pour un utilisateur dans l'ordre séquentiel des étapes et sans sauter d'étapes.| ✓ | ✓ | ✓ | [841](https://cwe.mitre.org/data/definitions/841.html) |
+| **11.1.2** | Vérifier que l'application traitera seulement les flux de logiques métier, toutes les étapes étant traitées en temps humain réaliste, c'est-à-dire que les transactions ne sont pas soumises trop rapidement (effectuer par un robot).| ✓ | ✓ | ✓ | [799](https://cwe.mitre.org/data/definitions/799.html) |
 | **11.1.3** | Vérifiez que l'application comporte des limites appropriées pour des actions ou des transactions commerciales spécifiques qui sont correctement exécutées par utilisateur. | ✓ | ✓ | ✓ | [770](https://cwe.mitre.org/data/definitions/770.html) |
-| **11.1.4** | Vérifiez que l'application dispose de contrôles anti-automatisation suffisants pour détecter et protéger contre l'exfiltration de données, les demandes excessives de logique commerciale, les téléchargements excessifs de fichiers ou les attaques par déni de service. | ✓ | ✓ | ✓ | [770](https://cwe.mitre.org/data/definitions/770.html) |
-| **11.1.5** | Vérifier que l'application a des limites ou une validation de la logique commerciale pour se protéger contre les risques ou les menaces commerciales probables, identifiés à l'aide de la modélisation des menaces ou de méthodologies similaires. | ✓ | ✓ | ✓ | [841](https://cwe.mitre.org/data/definitions/841.html) |
-| **11.1.6** | Vérifiez que la demande ne souffre pas de problèmes de "temps de contrôle au moment de l'utilisation" (TOCTOU) ou d'autres conditions de course pour les opérations sensibles. | | ✓ | ✓ | [367](https://cwe.mitre.org/data/definitions/367.html) |
-| **11.1.7** | Vérifiez que les moniteurs de demande ne présentent pas d'événements ou d'activités inhabituels du point de vue de la logique commerciale. Par exemple, des tentatives d'effectuer des actions hors service ou des actions qu'un utilisateur normal ne tenterait jamais. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [754](https://cwe.mitre.org/data/definitions/754.html) |
-| **11.1.8** | Vérifiez que l'application dispose d'une alerte configurable lorsque des attaques automatisées ou une activité inhabituelle sont détectées. | | ✓ | ✓ | [390](https://cwe.mitre.org/data/definitions/390.html) |
+| **11.1.4** | Vérifiez que l'application dispose de contrôles anti-automatisation suffisants pour détecter et protéger contre l'exfiltration de données, les demandes excessives de logique métiers, les téléchargements excessifs de fichiers ou les attaques par déni de service. | ✓ | ✓ | ✓ | [770](https://cwe.mitre.org/data/definitions/770.html) |
+| **11.1.5** | Vérifier que l'application a des limites ou une validation de la logique métier pour se protéger contre les risques ou les menaces commerciales probables, identifiés à l'aide de la modélisation des menaces ou de méthodologies similaires. | ✓ | ✓ | ✓ | [841](https://cwe.mitre.org/data/definitions/841.html) |
+| **11.1.6** | Vérifiez que la demande ne souffre pas de problèmes de "temps de contrôle au moment de l'utilisation" (TOCTOU) ou d'autres situation de compétition (race condition) pour les opérations sensibles. | | ✓ | ✓ | [367](https://cwe.mitre.org/data/definitions/367.html) |
+| **11.1.7** | Vérifiez que les moniteurs de demande ne présentent pas d'événements ou d'activités inhabituels du point de vue de la logique métier. Par exemple, des tentatives d'effectuer des actions hors service ou des actions qu'un utilisateur normal ne tenterait jamais. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [754](https://cwe.mitre.org/data/definitions/754.html) |
+| **11.1.8** | Vérifiez que l'application dispose d'une lorsque des attaques automatisées ou une activité inhabituelle sont détectées. | | ✓ | ✓ | [390](https://cwe.mitre.org/data/definitions/390.html) |
 
 ## Références
 
@@ -1165,7 +1164,7 @@ Assurez-vous qu'une application vérifiée satisfait aux exigences de haut nivea
 
 ## V12.1 Exigences pour le téléchargement de fichiers
 
-Bien que les bombes zip soient éminemment testables à l'aide de techniques de test de pénétration, elles sont considérées comme L2 et au-dessus pour encourager la prise en compte de la conception et du développement avec des tests manuels minutieux, et pour éviter les tests de pénétration manuels automatisés ou non qualifiés d'une condition de déni de service.
+Bien que les bombes zip soient facilement testables à l'aide de techniques de test de pénétration, elles sont considérées comme L2 et au-dessus pour encourager la prise en compte de la conception et du développement avec des tests manuels minutieux, et pour éviter les tests de pénétration manuels ou automatisés engendre une condition de déni de service.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
@@ -1179,11 +1178,11 @@ Bien que les bombes zip soient éminemment testables à l'aide de techniques de 
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **12.2.1** | Vérifiez que les fichiers obtenus de sources non fiables sont validés comme étant du type attendu en fonction du contenu du fichier. | | ✓ | ✓ | [434](https://cwe.mitre.org/data/definitions/434.html) |
 
-## V12.3 Exigences relatives à l'exécution des dossiers
+## V12.3 Exigences relatives à l'exécution des fichiers
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **12.3.1** | Vérifiez que les métadonnées de nom de fichier soumises par l'utilisateur ne sont pas utilisées directement par les systèmes de fichiers du système ou du cadre et qu'une API URL est utilisée pour protéger contre la traversée du chemin. | ✓ | ✓ | ✓ | [22](https://cwe.mitre.org/data/definitions/22.html) |
+| **12.3.1** | Vérifiez que les métadonnées de nom de fichier soumises par l'utilisateur ne sont pas utilisées directement par les systèmes de fichiers du système ou du cadre et qu'une API URL est utilisée pour protéger contre la traversée du chemin (path traversal). | ✓ | ✓ | ✓ | [22](https://cwe.mitre.org/data/definitions/22.html) |
 | **12.3.2** | Vérifier que les métadonnées de nom de fichier soumises par l'utilisateur sont validées ou ignorées pour empêcher la divulgation, la création, la mise à jour ou la suppression de fichiers locaux (LFI). | ✓ | ✓ | ✓ | [73](https://cwe.mitre.org/data/definitions/73.html) |
 | **12.3.3** | Vérifier que les métadonnées de nom de fichier soumises par l'utilisateur sont validées ou ignorées pour empêcher la divulgation ou l'exécution de fichiers distants (RFI), qui peuvent également conduire à des SSRF.  | ✓ | ✓ | ✓ | [98](https://cwe.mitre.org/data/definitions/98.html) |
 | **12.3.4** | Vérifiez que l'application protège contre le téléchargement de fichiers réfléchis (RFD) en validant ou en ignorant les noms de fichiers soumis par les utilisateurs dans un paramètre JSON, JSONP ou URL, l'en-tête Content-Type de la réponse doit être défini sur text/plain, et l'en-tête Content-Disposition doit avoir un nom de fichier fixe. | ✓ | ✓ | ✓ | [641](https://cwe.mitre.org/data/definitions/641.html) |
@@ -1197,7 +1196,7 @@ Bien que les bombes zip soient éminemment testables à l'aide de techniques de 
 | **12.4.1** | Vérifiez que les fichiers obtenus de sources non fiables sont stockés en dehors de la racine web, avec des permissions limitées, de préférence avec une validation forte. | ✓ | ✓ | ✓ | [922](https://cwe.mitre.org/data/definitions/922.html) |
 | **12.4.2** | Vérifiez que les fichiers obtenus de sources non fiables sont analysés par des scanners antivirus pour empêcher le téléchargement de contenus malveillants connus. | ✓ | ✓ | ✓ | [509](https://cwe.mitre.org/data/definitions/509.html) |
 
-## V12.5 Conditions de téléchargement des fichiers
+## V12.5 Exigences de téléchargement des fichiers
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
@@ -1241,9 +1240,9 @@ Veuillez lire ce chapitre en combinaison avec tous les autres chapitres à ce m�
 
 ## V13.2 Exigences de védification pour les services web de type RESTful
 
-La validation du schéma JSON en est à un stade préliminaire de normalisation (voir références). Lorsque vous envisagez d'utiliser la validation de schéma JSON, qui est la meilleure pratique pour les services web RESTful, pensez à utiliser ces stratégies de validation de données supplémentaires en combinaison avec la validation de schéma JSON :
+La validation du schéma JSON en est à un stade préliminaire de normalisation ([voir références](https://json-schema.org/specification.html)). Lorsque vous envisagez d'utiliser la validation de schéma JSON, qui est la meilleure pratique pour les services web RESTful, pensez à utiliser ces stratégies de validation de données supplémentaires en combinaison avec la validation de schéma JSON :
 
-* Validation de l'objet JSON, par exemple s'il y a des éléments manquants ou supplémentaires.
+* Validation de l'objet JSON, par exemple s'il y a des éléments manquants ou en trop.
 * Validation des valeurs de l'objet JSON en utilisant des méthodes de validation d'entrée standard, telles que le type de données, le format de données, la longueur, etc.
 * et validation formelle du schéma JSON.
 
@@ -1257,9 +1256,7 @@ Une fois que la norme de validation du schéma JSON sera formalisée, l'ASVS met
 | **13.2.4** | Vérifiez que les services web RESTful qui utilisent des cookies sont protégés contre la falsification des requêtes intersites par l'utilisation d'au moins un ou plusieurs des éléments suivants : modèle de cookie à triple ou double soumission (voir [références](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)), nonces CSRF ou vérification de l'en-tête de la requête d'origine. | ✓ | ✓ | ✓ | [352](https://cwe.mitre.org/data/definitions/352.html) |
 | **13.2.5** | Vérifiez que les services REST disposent de contrôles anti-automatisation pour se protéger contre les appels excessifs, surtout si l'API n'est pas authentifiée. | | ✓ | ✓ | [770](https://cwe.mitre.org/data/definitions/770.html) |
 | **13.2.6** | Vérifiez que les services REST vérifient explicitement que le type de contenu entrant est bien celui attendu, par exemple application/xml ou application/json. | | ✓ | ✓ | [436](https://cwe.mitre.org/data/definitions/436.html) |
-| **13.2.7** | Vérifiez que les en-têtes et la données utiles sont dignes de confiance et intègre. Exiger un cryptage fort pour le transport (TLS uniquement) peut être suffisant dans de nombreux cas, car il assure à la fois la protection de la confidentialité et de l'intégrité. Les messages signés peuvent fournir une assurance supplémentaire en plus des protections de transport pour les applications de haute sécurité, mais elles entraînent une complexité et des risques supplémentaires à comparer avec les avantages.
-
-Traduit avec www.DeepL.com/Translator (version gratuite) | | ✓ | ✓ | [345](https://cwe.mitre.org/data/definitions/345.html) |
+| **13.2.7** | Vérifiez que les en-têtes et la données utiles sont dignes de confiance et intègre. Exiger un cryptage fort pour le transport (TLS uniquement) peut être suffisant dans de nombreux cas, car il assure à la fois la protection de la confidentialité et de l'intégrité. Les messages signés peuvent fournir une assurance supplémentaire en plus des protections de transport pour les applications de haute sécurité, mais elles entraînent une complexité et des risques supplémentaires à comparer avec les avantages. | | ✓ | ✓ | [345](https://cwe.mitre.org/data/definitions/345.html) |
 
 ## V13.3 Exigences de vérification du service web SOAP
 
@@ -1298,12 +1295,12 @@ Pour plus d'informations, voir aussi :
 Assurez-vous qu'une application vérifiée satisfait :
 
 * Un environnement de construction sécurisé, reproductible et automatisable.
-* Une bibliothèque tierce, une gestion des dépendances et de la configuration renforcée, de sorte que les composants obsolètes ou non sécurisés ne soient pas inclus dans l'application.
+* Une gestion des dépendances étroite et une configuration renforcée, de sorte que les composants obsolètes ou non sécurisés ne soient pas inclus dans l'application.
 * Une configuration sécurisée par défaut, de sorte que les administrateurs et les utilisateurs doivent affaiblir la sécurité par défaut.
 
 La configuration de l'application "out of the box" doit être sûre pour être sur Internet, ce qui signifie une configuration "out of the box".
 
-## V14.1 Build
+## V14.1 Exigences sur les constructions
 
 Les pipelines de construction sont la base d'une sécurité reproductible : chaque fois qu'un élément non sécurisé est découvert, il peut être résolu dans le code source, les scripts de construction ou de déploiement, et testé automatiquement. Nous encourageons fortement l'utilisation de pipelines de compilation avec des contrôles de sécurité et de dépendance automatiques qui avertissent ou interrompent la compilation afin d'éviter que des problèmes de sécurité connus ne soient déployés en production. Les étapes manuelles effectuées de manière irrégulière conduisent directement à des erreurs de sécurité évitables.
 
@@ -1317,11 +1314,11 @@ La conformité à cette section nécessite un système de construction automatis
 | --- | --- | --- | --- | -- | -- |
 | **14.1.1** | Vérifier que les processus de construction et de déploiement des applications sont effectués de manière sûre et répétable, comme l'automatisation des CI / CD, la gestion automatisée de la configuration et les scripts de déploiement automatisés. | | ✓ | ✓ | |
 | **14.1.2** | Vérifiez que les drapeaux du compilateur sont configurés pour activer toutes les protections et les avertissements disponibles contre les débordements de mémoire tampon, y compris la randomisation de la pile, la prévention de l'exécution des données, et pour casser la compilation si un pointeur, une mémoire, une chaîne de format, un entier ou une chaîne de caractères dangereux sont trouvés. | | ✓ | ✓ | [120](https://cwe.mitre.org/data/definitions/120.html) |
-| **14.1.3** | Vérifiez que la configuration du serveur est durcie conformément aux recommandations du serveur d'application et des frameworks utilisés. | | ✓ | ✓ | [16](https://cwe.mitre.org/data/definitions/16.html) |
+| **14.1.3** | Vérifiez que la configuration du serveur est durcie conformément aux recommandations du serveur d'application et des cadres utilisés. | | ✓ | ✓ | [16](https://cwe.mitre.org/data/definitions/16.html) |
 | **14.1.4** | Vérifier que l'application, la configuration et toutes les dépendances peuvent être redéployées à l'aide de scripts de déploiement automatisés, construites à partir d'un runbook documenté et testé dans un délai raisonnable, ou restaurées à partir de sauvegardes en temps utile. | | ✓ | ✓ | |
 | **14.1.5** | Vérifier que les administrateurs autorisés peuvent vérifier l'intégrité de toutes les configurations pertinentes pour la sécurité afin de détecter les altérations. | | | ✓ | |
 
-## V14.2 Dépendance
+## V14.2 Exigences sur les dépendances
 
 La gestion des dépendances est essentielle au bon fonctionnement de toute application, quel que soit son type. L'incapacité à se tenir à jour avec des dépendances obsolètes ou peu sûres est la cause première des attaques les plus importantes et les plus coûteuses à ce jour.
 
@@ -1338,7 +1335,7 @@ Remarque : au niveau 1, la conformité à la norme 14.2.1 concerne les observati
 
 ## V14.3 Exigences de divulgation involontaire de renseignements sur la sécurité
 
-Les configurations de production devraient être renforcées pour se protéger contre les attaques courantes, telles que les consoles de débogage, relever la barre pour les attaques de type "cross-site scripting" (XSS) et "remote file inclusion" (RFI), et pour éliminer les "vulnérabilités" triviales de découverte d'informations qui sont la marque malvenue de nombreux rapports de tests de pénétration. Nombre de ces problèmes sont rarement considérés comme un risque important, mais ils sont liés à d'autres vulnérabilités. Si ces problèmes ne sont pas présents par défaut, la barre est placée plus haut avant que la plupart des attaques puissent réussir.
+Les configurations de production devraient être renforcées pour se protéger contre les attaques courantes, telles que les consoles de débogage, relever la barre pour les attaques de type "cross-site scripting" (XSS) et "remote file inclusion" (RFI), et pour éliminer les "vulnérabilités" triviales de découverte d'informations qui sont la marque indésirable de nombreux rapports de tests de pénétration. Nombre de ces problèmes sont rarement considérés comme un risque important, mais ils sont liés à d'autres vulnérabilités. Si ces problèmes ne sont pas présents par défaut, elle place la barre plus haut avant que la plupart des attaques puissent réussir.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | --- | --- | --- | --- | -- | -- |
@@ -1356,13 +1353,13 @@ Les configurations de production devraient être renforcées pour se protéger c
 | **14.4.4** | Vérifiez que toutes les réponses contiennent X-Content-Type-Options: nosniff. | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
 | **14.4.5** | Vérifiez que l'en-tête Strict-Transport-Security est inclus dans toutes les réponses et pour tous les sous-domaines, comme Strict-Transport-Security : max-age=15724800 ; includeSubdomains. | ✓ | ✓ | ✓ | [523](https://cwe.mitre.org/data/definitions/523.html) |
 | **14.4.6** | Vérifiez qu'un en-tête "Referrer-Policy" approprié est inclus, tel que "no-referrer" ou "same-origin". | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
-| **14.4.7** | Vérifier que le contenu d'une application web ne peut pas être intégré par défaut dans un site tiers et que l'intégration des ressources exactes n'est autorisée que si nécessaire en utilisant un en-tête approprié de type Content-Security-Policy : frame-ancestors et X-Frame-Options. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
+| **14.4.7** | Vérifier que le contenu d'une application web ne peut pas être intégré par défaut dans un site tiers et que l'intégration des ressources exactes n'est autorisée que si nécessaire en utilisant un en-tête approprié tel "Content-Security-Policy: frame-ancestors" ou "X-Frame-Options". | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 
-## V14.5 Valider les exigences de l'en-tête de requête HTTP
+## V14.5 Exigences sur la validation des en-têtes de requête HTTP
 
 | # | Description | L1 | L2 | L3 | CWE |
 | --- | --- | --- | --- | -- | -- |
-| **14.5.1** | Vérifiez que le serveur d'application n'accepte que les méthodes HTTP utilisées par l'application/API, y compris les OPTIONS de "pre-flight", et les journaux/alertes sur toutes les demandes qui ne sont pas valables pour le contexte de l'application. | ✓ | ✓ | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
+| **14.5.1** | Vérifiez que le serveur d'application accepte seulement les méthodes HTTP utilisées par l'application/API (incluant les requetes de type OPTIONS), et les journalise/alertes sur toutes les demandes qui sont invalades pour le contexte de l'application. | ✓ | ✓ | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
 | **14.5.2** | Vérifiez que l'en-tête Origin fourni n'est pas utilisé pour les décisions d'authentification ou de contrôle d'accès, car l'en-tête Origin peut facilement être modifié par un attaquant. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 | **14.5.3** | Vérifiez que l'en-tête "Cross-Origin Resource Sharing" (CORS) Access-Control-Allow-Origin utilise une liste blanche stricte de domaines et sous-domaines de confiance pour la comparaison avec l'origine "null" et ne la prend pas en charge. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 | **14.5.4** | Vérifiez que les en-têtes HTTP ajoutés par un proxy de confiance ou des dispositifs SSO, tels qu'un jeton au porteur, sont authentifiés par l'application. | | ✓ | ✓ | [306](https://cwe.mitre.org/data/definitions/306.html) |
