@@ -9,7 +9,7 @@ Assurez-vous qu'une application vérifiée satisfait aux exigences de haut nivea
 
 ## V12.1 Exigences pour le téléchargement de fichiers
 
-Bien que les bombes zip soient éminemment testables à l'aide de techniques de test de pénétration, elles sont considérées comme L2 et au-dessus pour encourager la prise en compte de la conception et du développement avec des tests manuels minutieux, et pour éviter les tests de pénétration manuels automatisés ou non qualifiés d'une condition de déni de service.
+Bien que les bombes zip soient facilement testables à l'aide de techniques de test de pénétration, elles sont considérées comme L2 et au-dessus pour encourager la prise en compte de la conception et du développement avec des tests manuels minutieux, et pour éviter les tests de pénétration manuels ou automatisés engendre une condition de déni de service.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
@@ -23,11 +23,11 @@ Bien que les bombes zip soient éminemment testables à l'aide de techniques de 
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **12.2.1** | Vérifiez que les fichiers obtenus de sources non fiables sont validés comme étant du type attendu en fonction du contenu du fichier. | | ✓ | ✓ | [434](https://cwe.mitre.org/data/definitions/434.html) |
 
-## V12.3 Exigences relatives à l'exécution des dossiers
+## V12.3 Exigences relatives à l'exécution des fichiers
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **12.3.1** | Vérifiez que les métadonnées de nom de fichier soumises par l'utilisateur ne sont pas utilisées directement par les systèmes de fichiers du système ou du cadre et qu'une API URL est utilisée pour protéger contre la traversée du chemin. | ✓ | ✓ | ✓ | [22](https://cwe.mitre.org/data/definitions/22.html) |
+| **12.3.1** | Vérifiez que les métadonnées de nom de fichier soumises par l'utilisateur ne sont pas utilisées directement par les systèmes de fichiers du système ou du cadre et qu'une API URL est utilisée pour protéger contre la traversée du chemin (path traversal). | ✓ | ✓ | ✓ | [22](https://cwe.mitre.org/data/definitions/22.html) |
 | **12.3.2** | Vérifier que les métadonnées de nom de fichier soumises par l'utilisateur sont validées ou ignorées pour empêcher la divulgation, la création, la mise à jour ou la suppression de fichiers locaux (LFI). | ✓ | ✓ | ✓ | [73](https://cwe.mitre.org/data/definitions/73.html) |
 | **12.3.3** | Vérifier que les métadonnées de nom de fichier soumises par l'utilisateur sont validées ou ignorées pour empêcher la divulgation ou l'exécution de fichiers distants (RFI), qui peuvent également conduire à des SSRF.  | ✓ | ✓ | ✓ | [98](https://cwe.mitre.org/data/definitions/98.html) |
 | **12.3.4** | Vérifiez que l'application protège contre le téléchargement de fichiers réfléchis (RFD) en validant ou en ignorant les noms de fichiers soumis par les utilisateurs dans un paramètre JSON, JSONP ou URL, l'en-tête Content-Type de la réponse doit être défini sur text/plain, et l'en-tête Content-Disposition doit avoir un nom de fichier fixe. | ✓ | ✓ | ✓ | [641](https://cwe.mitre.org/data/definitions/641.html) |
@@ -41,7 +41,7 @@ Bien que les bombes zip soient éminemment testables à l'aide de techniques de 
 | **12.4.1** | Vérifiez que les fichiers obtenus de sources non fiables sont stockés en dehors de la racine web, avec des permissions limitées, de préférence avec une validation forte. | ✓ | ✓ | ✓ | [922](https://cwe.mitre.org/data/definitions/922.html) |
 | **12.4.2** | Vérifiez que les fichiers obtenus de sources non fiables sont analysés par des scanners antivirus pour empêcher le téléchargement de contenus malveillants connus. | ✓ | ✓ | ✓ | [509](https://cwe.mitre.org/data/definitions/509.html) |
 
-## V12.5 Conditions de téléchargement des fichiers
+## V12.5 Exigences de téléchargement des fichiers
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |

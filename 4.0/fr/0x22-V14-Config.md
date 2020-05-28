@@ -5,12 +5,12 @@
 Assurez-vous qu'une application vérifiée satisfait :
 
 * Un environnement de construction sécurisé, reproductible et automatisable.
-* Une bibliothèque tierce, une gestion des dépendances et de la configuration renforcée, de sorte que les composants obsolètes ou non sécurisés ne soient pas inclus dans l'application.
+* Une gestion des dépendances étroite et une configuration renforcée, de sorte que les composants obsolètes ou non sécurisés ne soient pas inclus dans l'application.
 * Une configuration sécurisée par défaut, de sorte que les administrateurs et les utilisateurs doivent affaiblir la sécurité par défaut.
 
 La configuration de l'application "out of the box" doit être sûre pour être sur Internet, ce qui signifie une configuration "out of the box".
 
-## V14.1 Build
+## V14.1 Exigences sur les constructions
 
 Les pipelines de construction sont la base d'une sécurité reproductible : chaque fois qu'un élément non sécurisé est découvert, il peut être résolu dans le code source, les scripts de construction ou de déploiement, et testé automatiquement. Nous encourageons fortement l'utilisation de pipelines de compilation avec des contrôles de sécurité et de dépendance automatiques qui avertissent ou interrompent la compilation afin d'éviter que des problèmes de sécurité connus ne soient déployés en production. Les étapes manuelles effectuées de manière irrégulière conduisent directement à des erreurs de sécurité évitables.
 
@@ -24,11 +24,11 @@ La conformité à cette section nécessite un système de construction automatis
 | --- | --- | --- | --- | -- | -- |
 | **14.1.1** | Vérifier que les processus de construction et de déploiement des applications sont effectués de manière sûre et répétable, comme l'automatisation des CI / CD, la gestion automatisée de la configuration et les scripts de déploiement automatisés. | | ✓ | ✓ | |
 | **14.1.2** | Vérifiez que les drapeaux du compilateur sont configurés pour activer toutes les protections et les avertissements disponibles contre les débordements de mémoire tampon, y compris la randomisation de la pile, la prévention de l'exécution des données, et pour casser la compilation si un pointeur, une mémoire, une chaîne de format, un entier ou une chaîne de caractères dangereux sont trouvés. | | ✓ | ✓ | [120](https://cwe.mitre.org/data/definitions/120.html) |
-| **14.1.3** | Vérifiez que la configuration du serveur est durcie conformément aux recommandations du serveur d'application et des frameworks utilisés. | | ✓ | ✓ | [16](https://cwe.mitre.org/data/definitions/16.html) |
+| **14.1.3** | Vérifiez que la configuration du serveur est durcie conformément aux recommandations du serveur d'application et des cadres utilisés. | | ✓ | ✓ | [16](https://cwe.mitre.org/data/definitions/16.html) |
 | **14.1.4** | Vérifier que l'application, la configuration et toutes les dépendances peuvent être redéployées à l'aide de scripts de déploiement automatisés, construites à partir d'un runbook documenté et testé dans un délai raisonnable, ou restaurées à partir de sauvegardes en temps utile. | | ✓ | ✓ | |
 | **14.1.5** | Vérifier que les administrateurs autorisés peuvent vérifier l'intégrité de toutes les configurations pertinentes pour la sécurité afin de détecter les altérations. | | | ✓ | |
 
-## V14.2 Dépendance
+## V14.2 Exigences sur les dépendances
 
 La gestion des dépendances est essentielle au bon fonctionnement de toute application, quel que soit son type. L'incapacité à se tenir à jour avec des dépendances obsolètes ou peu sûres est la cause première des attaques les plus importantes et les plus coûteuses à ce jour.
 
@@ -45,7 +45,7 @@ Remarque : au niveau 1, la conformité à la norme 14.2.1 concerne les observati
 
 ## V14.3 Exigences de divulgation involontaire de renseignements sur la sécurité
 
-Les configurations de production devraient être renforcées pour se protéger contre les attaques courantes, telles que les consoles de débogage, relever la barre pour les attaques de type "cross-site scripting" (XSS) et "remote file inclusion" (RFI), et pour éliminer les "vulnérabilités" triviales de découverte d'informations qui sont la marque malvenue de nombreux rapports de tests de pénétration. Nombre de ces problèmes sont rarement considérés comme un risque important, mais ils sont liés à d'autres vulnérabilités. Si ces problèmes ne sont pas présents par défaut, la barre est placée plus haut avant que la plupart des attaques puissent réussir.
+Les configurations de production devraient être renforcées pour se protéger contre les attaques courantes, telles que les consoles de débogage, relever la barre pour les attaques de type "cross-site scripting" (XSS) et "remote file inclusion" (RFI), et pour éliminer les "vulnérabilités" triviales de découverte d'informations qui sont la marque indésirable de nombreux rapports de tests de pénétration. Nombre de ces problèmes sont rarement considérés comme un risque important, mais ils sont liés à d'autres vulnérabilités. Si ces problèmes ne sont pas présents par défaut, elle place la barre plus haut avant que la plupart des attaques puissent réussir.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | --- | --- | --- | --- | -- | -- |
@@ -63,13 +63,13 @@ Les configurations de production devraient être renforcées pour se protéger c
 | **14.4.4** | Vérifiez que toutes les réponses contiennent X-Content-Type-Options: nosniff. | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
 | **14.4.5** | Vérifiez que l'en-tête Strict-Transport-Security est inclus dans toutes les réponses et pour tous les sous-domaines, comme Strict-Transport-Security : max-age=15724800 ; includeSubdomains. | ✓ | ✓ | ✓ | [523](https://cwe.mitre.org/data/definitions/523.html) |
 | **14.4.6** | Vérifiez qu'un en-tête "Referrer-Policy" approprié est inclus, tel que "no-referrer" ou "same-origin". | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
-| **14.4.7** | Vérifier que le contenu d'une application web ne peut pas être intégré par défaut dans un site tiers et que l'intégration des ressources exactes n'est autorisée que si nécessaire en utilisant un en-tête approprié de type Content-Security-Policy : frame-ancestors et X-Frame-Options. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
+| **14.4.7** | Vérifier que le contenu d'une application web ne peut pas être intégré par défaut dans un site tiers et que l'intégration des ressources exactes n'est autorisée que si nécessaire en utilisant un en-tête approprié tel "Content-Security-Policy: frame-ancestors" ou "X-Frame-Options". | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 
-## V14.5 Valider les exigences de l'en-tête de requête HTTP
+## V14.5 Exigences sur la validation des en-têtes de requête HTTP
 
 | # | Description | L1 | L2 | L3 | CWE |
 | --- | --- | --- | --- | -- | -- |
-| **14.5.1** | Vérifiez que le serveur d'application n'accepte que les méthodes HTTP utilisées par l'application/API, y compris les OPTIONS de "pre-flight", et les journaux/alertes sur toutes les demandes qui ne sont pas valables pour le contexte de l'application. | ✓ | ✓ | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
+| **14.5.1** | Vérifiez que le serveur d'application accepte seulement les méthodes HTTP utilisées par l'application/API (incluant les requetes de type OPTIONS), et les journalise/alertes sur toutes les demandes qui sont invalades pour le contexte de l'application. | ✓ | ✓ | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
 | **14.5.2** | Vérifiez que l'en-tête Origin fourni n'est pas utilisé pour les décisions d'authentification ou de contrôle d'accès, car l'en-tête Origin peut facilement être modifié par un attaquant. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 | **14.5.3** | Vérifiez que l'en-tête "Cross-Origin Resource Sharing" (CORS) Access-Control-Allow-Origin utilise une liste blanche stricte de domaines et sous-domaines de confiance pour la comparaison avec l'origine "null" et ne la prend pas en charge. | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 | **14.5.4** | Vérifiez que les en-têtes HTTP ajoutés par un proxy de confiance ou des dispositifs SSO, tels qu'un jeton au porteur, sont authentifiés par l'application. | | ✓ | ✓ | [306](https://cwe.mitre.org/data/definitions/306.html) |

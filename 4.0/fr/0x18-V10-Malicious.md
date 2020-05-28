@@ -19,7 +19,7 @@ Les principaux développeurs doivent régulièrement examiner les vérifications
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers non sécurisées et les connexions réseau. | | | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
+| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers et les connexions réseau non sécurisées. | | | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
 
 ## V10.2 Recherche de code malveillant
 

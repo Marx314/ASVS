@@ -59,18 +59,18 @@ La gestion des sessions basée sur des jetons comprend les clés JWT, OAuth, SAM
 
 | # | Description | L1 | L2 | L3 | CWE | [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html) |
 | :---: | :--- | :---: | :---:| :---: | :---: | :---: |
-| **3.5.1** | Vérifiez que l'application ne traite pas les jetons OAuth et refresh -- de leur propre -- comme la présence de l'abonné et permet aux utilisateurs de mettre fin aux relations de confiance avec les applications liées.  | | ✓ | ✓ | [290](https://cwe.mitre.org/data/definitions/290.html) | 7.1.2 |
-| **3.5.2** | Vérifiez que l'application utilise des jetons de session plutôt que des secrets et des clés d'API statiques, sauf dans le cas d'anciennes implémentations. | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) | |
+| **3.5.1** | Vérifiez que l'application ne valide pas les jetons OAuth et refresh -- par eux-même -- comme la présence de l'abonné et permet aux utilisateurs de mettre fin aux relations de confiance avec les applications liées.  | | ✓ | ✓ | [290](https://cwe.mitre.org/data/definitions/290.html) | 7.1.2 |
+| **3.5.2** | Vérifiez que l'application utilise des jetons de session plutôt que des secrets et des clés d'API statiques, sauf dans le cas d'anciennes implémentations(legacy). | | ✓ | ✓ | [798](https://cwe.mitre.org/data/definitions/798.html) | |
 | **3.5.3** | Vérifiez que les jetons de session sans état utilisent les signatures numériques, le cryptage et d'autres contre-mesures pour se protéger contre les attaques par altération, mise sous enveloppe, rediffusion, chiffrement nul et substitution de clé. | | ✓ | ✓ | [345](https://cwe.mitre.org/data/definitions/345.html) | |
 
 ## V3.6 Re-authentification d'une fédération ou d'une assertion
 
-Cette section concerne les personnes qui écrivent le code de la partie dépendante (RP) ou du fournisseur de services d'accréditation (CSP). Si vous comptez sur un code mettant en œuvre ces caractéristiques, assurez-vous que ces questions sont traitées correctement.
+Cette section concerne les personnes qui écrivent le code de la partie de relais (RP) ou du fournisseur de services d'accréditation (CSP). Si vous comptez sur un code mettant en œuvre ces caractéristiques, assurez-vous que ces questions sont traitées correctement.
 
 | # | Description | L1 | L2 | L3 | CWE | [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html) |
 | :---: | :--- | :---: | :---:| :---: | :---: | :---: |
 | **3.6.1** | Vérifier que les parties qui se fient à la procédure précisent le délai maximal d'authentification aux fournisseurs de services d'authentification (CSP) et que ces derniers ré-authentifient l'abonné s'ils n'ont pas utilisé de session pendant cette période. | | | ✓ | [613](https://cwe.mitre.org/data/definitions/613.html) | 7.2.1 |
-| **3.6.2** | Vérifier que les fournisseurs de services d'accréditation (CSP) informent les parties ayant fait confiance au dernier événement d'authentification, afin de permettre aux RP de déterminer s'ils doivent ré-authentifier l'utilisateur. | | | ✓ | 613| 7.2.1 |
+| **3.6.2** | Vérifier que les fournisseurs de services d'accréditation (CSP) informent les parties ayant fait confiance au dernier événement d'authentification, afin de permettre aux RP de déterminer s'ils doivent ré-authentifier l'utilisateur. | | | ✓ | (https://cwe.mitre.org/data/definitions/613.html) | 7.2.1 |
 
 ## V3.7 Défenses contre l'exploitation de la gestion des sessions
 
