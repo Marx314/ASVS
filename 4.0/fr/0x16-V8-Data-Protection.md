@@ -28,7 +28,7 @@ Assurez-vous qu'une application vérifiée satisfait aux exigences de haut nivea
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **8.2.1** | Vérifiez que l'application définit suffisamment d'en-têtes anticaching pour que les données sensibles ne soient pas mises en cache dans les navigateurs modernes. | ✓ | ✓ | ✓ | [525](https://cwe.mitre.org/data/definitions/525.html) |
-| **8.2.2** | Vérifiez que les données stockées dans le stockage côté client (telles que le stockage local HTML5, le stockage de session, IndexedDB, les cookies réguliers ou les cookies Flash) ne contiennent pas de données sensibles ou d'IIP. | ✓ | ✓ | ✓ | [922](https://cwe.mitre.org/data/definitions/922.html) |
+| **8.2.2** | Vérifiez que les données stockées dans le stockage côté client (telles que le stockage local HTML5, le stockage de session, IndexedDB, ou les cookies) ne contiennent pas de données sensibles ou d'IIP. | ✓ | ✓ | ✓ | [922](https://cwe.mitre.org/data/definitions/922.html) |
 | **8.2.3** | Vérifiez que les données authentifiées sont effacées du stockage du client, tel que le DOM du navigateur, après la fin du client ou de la session. | ✓ | ✓ | ✓ | [922](https://cwe.mitre.org/data/definitions/922.html) |
 
 ## V8.3 Données privées sensibles

@@ -41,7 +41,7 @@ V7.2 couvre le Top 10 de l'OWASP 2017:A10. Comme 2017:A10 et cette section ne so
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **7.2.1** | Vérifiez que toutes les décisions d'authentification sont consignées, sans stocker d'identifiants de session ou de mots de passe sensibles. Cela devrait inclure les demandes avec les métadonnées pertinentes nécessaires aux enquêtes de sécurité.  | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
+| **7.2.1** | Vérifiez que toutes les décisions d'authentification sont consignées, sans stocker de jetons de session ou de mots de passe sensibles. Cela devrait inclure les demandes avec les métadonnées pertinentes nécessaires aux enquêtes de sécurité.  | | ✓ | ✓ | [778](https://cwe.mitre.org/data/definitions/778.html) |
 | **7.2.2** | Vérifiez que toutes les décisions de contrôle d'accès peuvent être enregistrées et que toutes les décisions qui ont échoué sont enregistrées. Cela devrait inclure les demandes avec les métadonnées pertinentes nécessaires aux enquêtes de sécurité. | | ✓ | ✓ | [285](https://cwe.mitre.org/data/definitions/285.html) |
 
 ## V7.3 Exigences en matière de protection des journaux

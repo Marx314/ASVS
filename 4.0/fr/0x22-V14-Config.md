@@ -59,10 +59,10 @@ Les configurations de production devraient être renforcées pour se protéger c
 | --- | --- | --- | --- | -- | -- |
 | **14.4.1** | Vérifiez que chaque réponse HTTP contient un en-tête Content-Type. Les types de contenu text/*, */*+xml et application/xml doivent également spécifier un jeu de caractères sûr (par exemple, UTF-8, ISO-8859-1). | ✓ | ✓ | ✓ | [173](https://cwe.mitre.org/data/definitions/173.html) |
 | **14.4.2** | Vérifiez que toutes les réponses de l'API contiennent Content-Disposition : attachment ; filename="api.json" (ou tout autre nom de fichier approprié pour le type de contenu). | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
-| **14.4.3** | Vérifier qu'une politique de sécurité du contenu (CSP) est en place pour aider à atténuer l'impact des attaques XSS comme les vulnérabilités d'injection HTML, DOM, JSON et JavaScript. | ✓ | ✓ | ✓ | [1021](https://cwe.mitre.org/data/definitions/1021.html) |
-| **14.4.4** | Vérifiez que toutes les réponses contiennent X-Content-Type-Options: nosniff. | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
+| **14.4.3** | Vérifier que chaque réponse HTTP contient une politique de sécurité du contenu (CSP) pour aider à atténuer l'impact des attaques XSS comme les vulnérabilités d'injection HTML, DOM, JSON et JavaScript. | ✓ | ✓ | ✓ | [1021](https://cwe.mitre.org/data/definitions/1021.html) |
+| **14.4.4** | Vérifiez que chaque réponse HTTP contient l'en-tête X-Content-Type-Options: nosniff. | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
 | **14.4.5** | Vérifiez que l'en-tête Strict-Transport-Security est inclus dans toutes les réponses et pour tous les sous-domaines, comme Strict-Transport-Security : max-age=15724800 ; includeSubdomains. | ✓ | ✓ | ✓ | [523](https://cwe.mitre.org/data/definitions/523.html) |
-| **14.4.6** | Vérifiez qu'un en-tête "Referrer-Policy" approprié est inclus, tel que "no-referrer" ou "same-origin". | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
+| **14.4.6** | Vérifiez que l'en-tête "Referrer-Policy" approprié est inclus, tel que "no-referrer" ou "same-origin". | ✓ | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
 | **14.4.7** | Vérifier que le contenu d'une application web ne peut pas être intégré par défaut dans un site tiers et que l'intégration des ressources exactes n'est autorisée que si nécessaire en utilisant un en-tête approprié tel "Content-Security-Policy: frame-ancestors" ou "X-Frame-Options". | ✓ | ✓ | ✓ | [346](https://cwe.mitre.org/data/definitions/346.html) |
 
 ## V14.5 Exigences sur la validation des en-têtes de requête HTTP
