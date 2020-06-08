@@ -19,7 +19,7 @@ Les principaux développeurs doivent régulièrement examiner les vérifications
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers et les connexions réseau non sécurisées. | | | ✓ | [749](https://cwe.mitre.org/data/definitions/749.html) |
+| **10.1.1** | Vérifiez qu'un outil d'analyse de code est utilisé pour détecter les codes potentiellement malveillants, tels que les fonctions temporelles, les opérations de fichiers et les connexions réseau non sécurisées. | | | ✓ | 749 |
 
 ## V10.2 Recherche de code malveillant
 
@@ -29,12 +29,12 @@ Il n'est pas possible de se conformer à cette section sans un accès complet au
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **10.2.1** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de "téléphone à la maison" ou de capacités de collecte de données non autorisées. Lorsque de telles fonctionnalités existent, obtenez l'autorisation de l'utilisateur pour leur fonctionnement avant de collecter des données. | | ✓ | ✓ | [359](https://cwe.mitre.org/data/definitions/359.html) |
-| **10.2.2** | Vérifiez que l'application ne demande pas d'autorisations inutiles ou excessives pour les caractéristiques ou capteurs liés à la vie privée, tels que les contacts, les caméras, les microphones ou l'emplacement. | | ✓ | ✓ | [272](https://cwe.mitre.org/data/definitions/272.html) |
-| **10.2.3** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de portes dérobées, telles que des comptes ou des clés codées en dur ou supplémentaires non documentées, des obscurcissements de code, des blobs binaires non documentés, des rootkits, ou des fonctions de débogage anti-débogage, non sécurisées, ou encore des fonctionnalités obsolètes, non sécurisées ou cachées qui pourraient être utilisées de manière malveillante si elles étaient découvertes. | | | ✓ | [507](https://cwe.mitre.org/data/definitions/507.html) |
-| **10.2.4** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de bombes à retardement en recherchant les fonctions liées à la date et à l'heure. | | | ✓ | [511](https://cwe.mitre.org/data/definitions/511.html) |
-| **10.2.5** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de code malveillant, tel que des attaques de type salami, des contournements logiques ou des bombes logiques. | | | ✓ | [511](https://cwe.mitre.org/data/definitions/511.html) |
-| **10.2.6** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas d'œufs de Pâques ou toute autre fonctionnalité potentiellement indésirable. | | | ✓ | [507](https://cwe.mitre.org/data/definitions/507.html) |
+| **10.2.1** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de "téléphone à la maison" ou de capacités de collecte de données non autorisées. Lorsque de telles fonctionnalités existent, obtenez l'autorisation de l'utilisateur pour leur fonctionnement avant de collecter des données. | | ✓ | ✓ | 359 |
+| **10.2.2** | Vérifiez que l'application ne demande pas d'autorisations inutiles ou excessives pour les caractéristiques ou capteurs liés à la vie privée, tels que les contacts, les caméras, les microphones ou l'emplacement. | | ✓ | ✓ | 272 |
+| **10.2.3** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de portes dérobées, telles que des comptes ou des clés codées en dur ou supplémentaires non documentées, des obscurcissements de code, des blobs binaires non documentés, des rootkits, ou des fonctions de débogage anti-débogage, non sécurisées, ou encore des fonctionnalités obsolètes, non sécurisées ou cachées qui pourraient être utilisées de manière malveillante si elles étaient découvertes. | | | ✓ | 507 |
+| **10.2.4** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de bombes à retardement en recherchant les fonctions liées à la date et à l'heure. | | | ✓ | 511 |
+| **10.2.5** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas de code malveillant, tel que des attaques de type salami, des contournements logiques ou des bombes logiques. | | | ✓ | 511 |
+| **10.2.6** | Vérifiez que le code source de l'application et les bibliothèques tierces ne contiennent pas d'œufs de Pâques ou toute autre fonctionnalité potentiellement indésirable. | | | ✓ | 507 |
 
 ## V10.3 Contrôles d'intégrité des applications déployées
 
@@ -44,9 +44,9 @@ La conformité à cette section est susceptible d'être opérationnelle et conti
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **10.3.1** | Vérifiez que si l'application dispose d'une fonction de mise à jour automatique du client ou du serveur, les mises à jour doivent être obtenues par des canaux sécurisés et signées numériquement. Le code de mise à jour doit valider la signature numérique de la mise à jour avant l'installation ou l'exécution de la mise à jour. | ✓ | ✓ | ✓ | [16](https://cwe.mitre.org/data/definitions/16.html) |
-| **10.3.2** | Vérifiez que l'application utilise des protections d'intégrité, telles que la signature de code ou l'intégrité des sous-ressources. L'application ne doit pas charger ou exécuter du code provenant de sources non fiables, comme des includes de chargement, des modules, des plugins, du code ou des bibliothèques provenant de sources non fiables ou de l'Internet. | ✓ | ✓ | ✓ | [353](https://cwe.mitre.org/data/definitions/353.html) |
-| **10.3.3** | Vérifiez que l'application est protégée contre les reprises de sous-domaines si elle repose sur des entrées DNS ou des sous-domaines DNS, tels que des noms de domaine expirés, des pointeurs DNS ou CNAME obsolètes, des projets expirés dans des dépôts de code source publics, ou des API de nuages transitoires, des fonctions sans serveur, ou des espaces de stockage (*autogen-bucket-id*.cloud.example.com) ou similaires. Les protections peuvent consister à s'assurer que les noms DNS utilisés par les applications sont régulièrement vérifiés pour détecter toute expiration ou modification. | ✓ | ✓ | ✓ | [350](https://cwe.mitre.org/data/definitions/350.html) |
+| **10.3.1** | Vérifiez que si l'application dispose d'une fonction de mise à jour automatique du client ou du serveur, les mises à jour doivent être obtenues par des canaux sécurisés et signées numériquement. Le code de mise à jour doit valider la signature numérique de la mise à jour avant l'installation ou l'exécution de la mise à jour. | ✓ | ✓ | ✓ | 16 |
+| **10.3.2** | Vérifiez que l'application utilise des protections d'intégrité, telles que la signature de code ou l'intégrité des sous-ressources. L'application ne doit pas charger ou exécuter du code provenant de sources non fiables, comme des includes de chargement, des modules, des plugins, du code ou des bibliothèques provenant de sources non fiables ou de l'Internet. | ✓ | ✓ | ✓ | 353 |
+| **10.3.3** | Vérifiez que l'application est protégée contre les reprises de sous-domaines si elle repose sur des entrées DNS ou des sous-domaines DNS, tels que des noms de domaine expirés, des pointeurs DNS ou CNAME obsolètes, des projets expirés dans des dépôts de code source publics, ou des API de nuages transitoires, des fonctions sans serveur, ou des espaces de stockage (*autogen-bucket-id*.cloud.example.com) ou similaires. Les protections peuvent consister à s'assurer que les noms DNS utilisés par les applications sont régulièrement vérifiés pour détecter toute expiration ou modification. | ✓ | ✓ | ✓ | 350 |
 
 ## Références
 

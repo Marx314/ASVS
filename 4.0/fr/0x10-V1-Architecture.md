@@ -15,13 +15,13 @@ Dans ce chapitre, l'ASVS couvre les principaux aspects de toute architecture de 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
 | **1.1.1** | Vérifier l'utilisation d'un cycle de développement de logiciel sécurisé qui prend en compte la sécurité à tous les stades du développement. ([C1](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | |
-| **1.1.2** | Vérifier l'utilisation de la modélisation des menaces pour chaque modification de conception ou planification de sprint afin d'identifier les menaces, de planifier les contre-mesures, de faciliter les réponses appropriées aux risques et d'orienter les tests de sécurité. | | ✓ | ✓ | [1053](https://cwe.mitre.org/data/definitions/1053.html) |
-| **1.1.3** | Vérifiez que toutes les récits utilisateurs et les fonctionnalités contiennent des contraintes de sécurité fonctionnelles, telles que "En tant qu'utilisateur, je devrais pouvoir consulter et modifier mon profil. Je ne devrais pas pouvoir voir ou modifier le profil de quelqu'un d'autre" | | ✓ | ✓ | [1110](https://cwe.mitre.org/data/definitions/1110.html) |
-| **1.1.4** | Vérifier la documentation et la justification de toutes les frontières de confiance de la demande, de ses composantes et des flux de données importants. | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
-| **1.1.5** | Vérifier la définition et l'analyse de sécurité de l'architecture de haut niveau de l'application et de tous les services à distance connectés. ([C1](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
-| **1.1.6** | Vérifier la mise en œuvre de contrôles de sécurité centralisés, simples (économie de conception), vérifiés, sécurisés et réutilisables pour éviter les contrôles en double, manquants, inefficaces ou peu sûrs. ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [637](https://cwe.mitre.org/data/definitions/637.html) |
-| **1.1.7** | Vérifier que tous les développeurs et testeurs disposent d'une liste de contrôle de codage sécurisé, d'exigences de sécurité, de lignes directrices ou de politiques. | | ✓ | ✓ | [637](https://cwe.mitre.org/data/definitions/637.html) |
-| **1.1.8** | Vérifier la disponibilité d'un fichier [security.txt](https://securitytxt.org/) accessible au public à la racine ou dans le répertoire .known de l'application, qui définit clairement un lien ou une adresse électronique permettant aux personnes de contacter les propriétaires pour des questions de sécurité. | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
+| **1.1.2** | Vérifier l'utilisation de la modélisation des menaces pour chaque modification de conception ou planification de sprint afin d'identifier les menaces, de planifier les contre-mesures, de faciliter les réponses appropriées aux risques et d'orienter les tests de sécurité. | | ✓ | ✓ | 1053 |
+| **1.1.3** | Vérifiez que toutes les récits utilisateurs et les fonctionnalités contiennent des contraintes de sécurité fonctionnelles, telles que "En tant qu'utilisateur, je devrais pouvoir consulter et modifier mon profil. Je ne devrais pas pouvoir voir ou modifier le profil de quelqu'un d'autre" | | ✓ | ✓ | 1110 |
+| **1.1.4** | Vérifier la documentation et la justification de toutes les frontières de confiance de la demande, de ses composantes et des flux de données importants. | | ✓ | ✓ | 1059 |
+| **1.1.5** | Vérifier la définition et l'analyse de sécurité de l'architecture de haut niveau de l'application et de tous les services à distance connectés. ([C1](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 1059 |
+| **1.1.6** | Vérifier la mise en œuvre de contrôles de sécurité centralisés, simples (économie de conception), vérifiés, sécurisés et réutilisables pour éviter les contrôles en double, manquants, inefficaces ou peu sûrs. ([C10](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 637 |
+| **1.1.7** | Vérifier que tous les développeurs et testeurs disposent d'une liste de contrôle de codage sécurisé, d'exigences de sécurité, de lignes directrices ou de politiques. | | ✓ | ✓ | 637 |
+| **1.1.8** | Vérifier la disponibilité d'un fichier [security.txt](https://securitytxt.org/) accessible au public à la racine ou dans le répertoire .known de l'application, qui définit clairement un lien ou une adresse électronique permettant aux personnes de contacter les propriétaires pour des questions de sécurité. | | ✓ | ✓ | 1059 |
 
 ## V1.2 Exigences architecturales d'authentification
 
@@ -29,9 +29,9 @@ Lors de la conception de l'authentification, il importe peu que vous disposiez d
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.2.1** | Vérifier que les communications entre les composants de l'application, y compris les API, les intergiciels et les couches de données, sont authentifiées et utilisent des comptes utilisateurs individuels. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [306](https://cwe.mitre.org/data/definitions/306.html) |
-| **1.2.2** | Vérifiez que l'application utilise un mécanisme d'authentification unique et contrôlé qui est connu pour être sûr, qui peut être étendu pour inclure une authentification forte et qui dispose d'une journalisation et d'une surveillance suffisantes pour détecter les abus ou les violations de compte. | | ✓ | ✓ | [306](https://cwe.mitre.org/data/definitions/306.html) |
-| **1.2.3** | Vérifier que toutes les méthodes d'authentification et les API de gestion de l'identité mettent en œuvre un contrôle de sécurité de l'authentification cohérent, de sorte qu'il n'y ait pas d'alternatives plus faibles par rapport au risque de l'application. | | ✓ | ✓ | [306](https://cwe.mitre.org/data/definitions/306.html) |
+| **1.2.1** | Vérifier que les communications entre les composants de l'application, y compris les API, les intergiciels et les couches de données, sont authentifiées et utilisent des comptes utilisateurs individuels. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 306 |
+| **1.2.2** | Vérifiez que l'application utilise un mécanisme d'authentification unique et contrôlé qui est connu pour être sûr, qui peut être étendu pour inclure une authentification forte et qui dispose d'une journalisation et d'une surveillance suffisantes pour détecter les abus ou les violations de compte. | | ✓ | ✓ | 306 |
+| **1.2.3** | Vérifier que toutes les méthodes d'authentification et les API de gestion de l'identité mettent en œuvre un contrôle de sécurité de l'authentification cohérent, de sorte qu'il n'y ait pas d'alternatives plus faibles par rapport au risque de l'application. | | ✓ | ✓ | 306 |
 
 ## V1.3 Exigences architecturales pour la gestion des sessions
 
@@ -41,12 +41,12 @@ Il s'agit d'un point de repère pour les futures exigences architecturales.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.4.1** | Vérifiez que des points d'application de confiance tels que les passerelles de contrôle d'accès, les serveurs et les fonctions sans serveur font respecter les contrôles d'accès. N'imposez jamais de contrôles d'accès au client. | | ✓ | ✓ | [602](https://cwe.mitre.org/data/definitions/602.html) |
-| **1.4.2** | Vérifiez que la solution de contrôle d'accès choisie est suffisamment souple pour répondre aux besoins de l'application.  | | ✓ | ✓ | [284](https://cwe.mitre.org/data/definitions/284.html) |
-| **1.4.3** | Vérifier l'application du principe du moindre privilège dans les fonctions, fichiers de données, URL, contrôleurs, services et autres ressources. Cela implique une protection contre l'usurpation et l'élévation des privilèges. | | ✓ | ✓ | [272](https://cwe.mitre.org/data/definitions/272.html) |
-| **1.4.4** | Vérifier que les communications entre les composants de l'application, y compris les API, les intergiciels et les couches de données, sont effectuées avec le moins de privilèges possibles. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [272](https://cwe.mitre.org/data/definitions/272.html) |
-| **1.4.5** | Vérifier que l'application utilise un mécanisme de contrôle d'accès unique et bien étudié pour accéder aux données et ressources protégées. Toutes les demandes doivent passer par ce mécanisme unique pour éviter le copier-coller ou les chemins alternatifs non sécurisés. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [284](https://cwe.mitre.org/data/definitions/284.html) |
-| **1.4.6** | Vérifiez que le contrôle d'accès basé sur les attributs ou les caractéristiques est utilisé, c'est-à-dire que le code vérifie l'autorisation de l'utilisateur pour une caractéristique ou une donnée plutôt que son seul rôle. Les autorisations doivent toujours être attribuées à l'aide de rôles. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [275](https://cwe.mitre.org/data/definitions/275.html) |
+| **1.4.1** | Vérifiez que des points d'application de confiance tels que les passerelles de contrôle d'accès, les serveurs et les fonctions sans serveur font respecter les contrôles d'accès. N'imposez jamais de contrôles d'accès au client. | | ✓ | ✓ | 602 |
+| **1.4.2** | Vérifiez que la solution de contrôle d'accès choisie est suffisamment souple pour répondre aux besoins de l'application.  | | ✓ | ✓ | 284 |
+| **1.4.3** | Vérifier l'application du principe du moindre privilège dans les fonctions, fichiers de données, URL, contrôleurs, services et autres ressources. Cela implique une protection contre l'usurpation et l'élévation des privilèges. | | ✓ | ✓ | 272 |
+| **1.4.4** | Vérifier que les communications entre les composants de l'application, y compris les API, les intergiciels et les couches de données, sont effectuées avec le moins de privilèges possibles. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 272 |
+| **1.4.5** | Vérifier que l'application utilise un mécanisme de contrôle d'accès unique et bien étudié pour accéder aux données et ressources protégées. Toutes les demandes doivent passer par ce mécanisme unique pour éviter le copier-coller ou les chemins alternatifs non sécurisés. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 284 |
+| **1.4.6** | Vérifiez que le contrôle d'accès basé sur les attributs ou les caractéristiques est utilisé, c'est-à-dire que le code vérifie l'autorisation de l'utilisateur pour une caractéristique ou une donnée plutôt que son seul rôle. Les autorisations doivent toujours être attribuées à l'aide de rôles. ([C7](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 275 |
 
 ## V1.5 Exigences architecturales d'entrée et de sortie
 
@@ -54,10 +54,10 @@ Dans la version 4.0, nous avons abandonné le terme "côté serveur" ayant la co
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.5.1** | Vérifier que les exigences en matière d'entrée et de sortie définissent clairement la manière de traiter et d'exploiter les données en fonction du type, du contenu et de la conformité aux lois, règlements et autres politiques applicables.  | | ✓ | ✓ | [1029](https://cwe.mitre.org/data/definitions/1029.html) |
-| **1.5.2** | Vérifiez que la sérialisation n'est pas utilisée lorsque vous communiquez avec des clients non fiables. Si cela n'est pas possible, assurez-vous que des contrôles d'intégrité adéquats (et éventuellement un cryptage si des données sensibles sont envoyées) sont appliqués pour empêcher les attaques de désérialisation, y compris l'injection d'objets. | | ✓ | ✓ | [502](https://cwe.mitre.org/data/definitions/502.html) |
-| **1.5.3** | Vérifiez que la validation des entrées est appliquée sur une couche de service de confiance. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [602](https://cwe.mitre.org/data/definitions/602.html) |
-| **1.5.4** | Vérifiez que l'encodage de sortie se fait à proximité ou par l'interprète auquel il est destiné. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [116](https://cwe.mitre.org/data/definitions/116.html) |
+| **1.5.1** | Vérifier que les exigences en matière d'entrée et de sortie définissent clairement la manière de traiter et d'exploiter les données en fonction du type, du contenu et de la conformité aux lois, règlements et autres politiques applicables.  | | ✓ | ✓ | 1029 |
+| **1.5.2** | Vérifiez que la sérialisation n'est pas utilisée lorsque vous communiquez avec des clients non fiables. Si cela n'est pas possible, assurez-vous que des contrôles d'intégrité adéquats (et éventuellement un cryptage si des données sensibles sont envoyées) sont appliqués pour empêcher les attaques de désérialisation, y compris l'injection d'objets. | | ✓ | ✓ | 502 |
+| **1.5.3** | Vérifiez que la validation des entrées est appliquée sur une couche de service de confiance. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 602 |
+| **1.5.4** | Vérifiez que l'encodage de sortie se fait à proximité ou par l'interprète auquel il est destiné. ([C4](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 116 |
 
 ## V1.6 Exigences en matière d'architecture cryptographique
 
@@ -67,16 +67,16 @@ Les exigences architecturales sont intrinsèques à toute la base de code, et do
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.6.1** | Vérifier qu'il existe une politique explicite de gestion des clés cryptographiques et que le cycle de vie d'une clé cryptographique suit une norme de gestion des clés telle que NIST SP 800-57. | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
-| **1.6.2** | Vérifier que les consommateurs de services cryptographiques protègent les clés et autres secrets en utilisant des coffres-forts de clés ou des alternatives basées sur l'API. | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
-| **1.6.3** | Vérifiez que toutes les clés et tous les mots de passe sont remplaçables et font partie d'un processus bien défini de recryptage des données sensibles. | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
-| **1.6.4** | Vérifier que les clés symétriques, les mots de passe ou les secrets d'API générés par les clients ou partagés avec eux ne sont utilisés que pour protéger des secrets à faible risque, comme le chiffrement du stockage local, ou des utilisations éphémères temporaires comme l'obscurcissement des paramètres. Le partage de secrets avec les clients est équivalent à du texte en clair et, d'un point de vue architectural, il doit être traité comme tel. | | ✓ | ✓ | [320](https://cwe.mitre.org/data/definitions/320.html) |
+| **1.6.1** | Vérifier qu'il existe une politique explicite de gestion des clés cryptographiques et que le cycle de vie d'une clé cryptographique suit une norme de gestion des clés telle que NIST SP 800-57. | | ✓ | ✓ | 320 |
+| **1.6.2** | Vérifier que les consommateurs de services cryptographiques protègent les clés et autres secrets en utilisant des coffres-forts de clés ou des alternatives basées sur l'API. | | ✓ | ✓ | 320 |
+| **1.6.3** | Vérifiez que toutes les clés et tous les mots de passe sont remplaçables et font partie d'un processus bien défini de recryptage des données sensibles. | | ✓ | ✓ | 320 |
+| **1.6.4** | Vérifier que les clés symétriques, les mots de passe ou les secrets d'API générés par les clients ou partagés avec eux ne sont utilisés que pour protéger des secrets à faible risque, comme le chiffrement du stockage local, ou des utilisations éphémères temporaires comme l'obscurcissement des paramètres. Le partage de secrets avec les clients est équivalent à du texte en clair et, d'un point de vue architectural, il doit être traité comme tel. | | ✓ | ✓ | 320 |
 
 ## V1.7 Erreurs, enregistrement et vérification des exigences architecturales
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.7.1** | Vérifier qu'un format de journalisation communs soit utilisés dans le système.  ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [1009](https://cwe.mitre.org/data/definitions/1009.html) |
+| **1.7.1** | Vérifier qu'un format de journalisation communs soit utilisés dans le système.  ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 1009 |
 | **1.7.2** | Vérifiez que les journaux sont transmis de manière sécurisée à un système de préférence distant pour analyse, détection, alerte et escalade. ([C9](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | |
 
 ## V1.8 Exigences architecturales en matière de protection des données et de la vie privée
@@ -90,29 +90,29 @@ Les exigences architecturales sont intrinsèques à toute la base de code, et do
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.9.1** | Vérifier que l'application chiffre les communications entre les composants, en particulier lorsque ces composants se trouvent dans des conteneurs, systèmes, sites ou fournisseurs de cloud différents. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [319](https://cwe.mitre.org/data/definitions/319.html) |
-| **1.9.2** | Vérifier que les composants de l'application vérifient l'authenticité de chaque partie d'un lien de communication afin de prévenir les attaques de type "person-in-the-middle". Par exemple, les composants d'application doivent valider les certificats et les chaînes TLS. | | ✓ | ✓ | [295](https://cwe.mitre.org/data/definitions/295.html) |
+| **1.9.1** | Vérifier que l'application chiffre les communications entre les composants, en particulier lorsque ces composants se trouvent dans des conteneurs, systèmes, sites ou fournisseurs de cloud différents. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 319 |
+| **1.9.2** | Vérifier que les composants de l'application vérifient l'authenticité de chaque partie d'un lien de communication afin de prévenir les attaques de type "person-in-the-middle". Par exemple, les composants d'application doivent valider les certificats et les chaînes TLS. | | ✓ | ✓ | 295 |
 
 ## V1.10 Exigences en matière d'architecture des logiciels malveillants
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.10.1** | Vérifier qu'un système de contrôle du code source est utilisé, avec des procédures pour s'assurer que les enregistrements sont accompagnés de tickets d'émission ou de modification. Le système de contrôle du code source doit disposer d'un contrôle d'accès et d'utilisateurs identifiables pour permettre la traçabilité de toute modification. | | ✓ | ✓ | [284](https://cwe.mitre.org/data/definitions/284.html) |
+| **1.10.1** | Vérifier qu'un système de contrôle du code source est utilisé, avec des procédures pour s'assurer que les enregistrements sont accompagnés de tickets d'émission ou de modification. Le système de contrôle du code source doit disposer d'un contrôle d'accès et d'utilisateurs identifiables pour permettre la traçabilité de toute modification. | | ✓ | ✓ | 284 |
 
 ## V1.11 Exigences en matière d'architecture de la logique d'entreprise
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.11.1** | Vérifier la définition et la documentation de tous les composants de l'application en ce qui concerne la logique d'affaire ou de sécurité qu'ils fournissent. | | ✓ | ✓ | [1059](https://cwe.mitre.org/data/definitions/1059.html) |
-| **1.11.2** | Vérifiez que tous les flux de logique métier de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, ne partagent pas un état non synchronisé. | | ✓ | ✓ | [362](https://cwe.mitre.org/data/definitions/362.html) |
-| **1.11.3** | Vérifier que tous les flux de logique d'entreprise de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, sont sécurisés et résistants aux conditions de course au temps de contrôle et au temps d'utilisation. | | | ✓ | [367](https://cwe.mitre.org/data/definitions/367.html) |
+| **1.11.1** | Vérifier la définition et la documentation de tous les composants de l'application en ce qui concerne la logique d'affaire ou de sécurité qu'ils fournissent. | | ✓ | ✓ | 1059 |
+| **1.11.2** | Vérifiez que tous les flux de logique métier de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, ne partagent pas un état non synchronisé. | | ✓ | ✓ | 362 |
+| **1.11.3** | Vérifier que tous les flux de logique d'entreprise de grande valeur, y compris l'authentification, la gestion de session et le contrôle d'accès, sont sécurisés et résistants aux conditions de course au temps de contrôle et au temps d'utilisation. | | | ✓ | 367 |
 
 ## V1.12 Téléchargement de fichiers sécurisés Exigences architecturales
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.12.1** | Vérifiez que les fichiers envoyés par l'utilisateur sont stockés en dehors de la racine du site web. | | ✓ | ✓ | [552](https://cwe.mitre.org/data/definitions/552.html) |
-| **1.12.2** | Vérifiez que les fichiers envoyés par l'utilisateur - s'ils doivent être affichés ou téléchargés à partir de l'application - sont servis par des téléchargements en flux d'octets, ou à partir d'un domaine sans rapport, comme un seau de stockage de fichiers en nuage. Mettre en œuvre une politique de sécurité du contenu (CSP) appropriée pour réduire le risque de vecteurs XSS ou d'autres attaques provenant du fichier téléchargé. | | ✓ | ✓ | [646](https://cwe.mitre.org/data/definitions/646.html) |
+| **1.12.1** | Vérifiez que les fichiers envoyés par l'utilisateur sont stockés en dehors de la racine du site web. | | ✓ | ✓ | 552 |
+| **1.12.2** | Vérifiez que les fichiers envoyés par l'utilisateur - s'ils doivent être affichés ou téléchargés à partir de l'application - sont servis par des téléchargements en flux d'octets, ou à partir d'un domaine sans rapport, comme un seau de stockage de fichiers en nuage. Mettre en œuvre une politique de sécurité du contenu (CSP) appropriée pour réduire le risque de vecteurs XSS ou d'autres attaques provenant du fichier téléchargé. | | ✓ | ✓ | 646 |
 
 ## V1.13 Exigences architecturales de l'API
 
@@ -122,13 +122,13 @@ Il s'agit d'un point de repère pour les futures exigences architecturales.
 
 | # | Description | L1 | L2 | L3 | CWE |
 | :---: | :--- | :---: | :---:| :---: | :---: |
-| **1.14.1** | Vérifier l'utilisation d'un compte à faible privilège pour tous les composants d'application, services et serveurs. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [250](https://cwe.mitre.org/data/definitions/250.html) |
-| **1.14.2** | Vérifiez que les signatures binaires, les connexions de confiance et les terminaux vérifiés sont utilisés pour déployer les binaires sur les appareils distants. | | ✓ | ✓ | [923](https://cwe.mitre.org/data/definitions/923.html) |
-| **1.14.3** | Vérifier que les signatures binaires, les connexions de confiance et les nœuds vérifiés sont utilisés pour déployer des binaires sur des dispositifs distants. | | ✓ | ✓ | [494](https://cwe.mitre.org/data/definitions/494.html) |
-| **1.14.4** | Vérifier que le pipeline de construction signale les composants obsolètes ou peu sûrs et prend les mesures appropriées. | | ✓ | ✓ | [1104](https://cwe.mitre.org/data/definitions/1104.html) |
+| **1.14.1** | Vérifier l'utilisation d'un compte à faible privilège pour tous les composants d'application, services et serveurs. ([C3](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 250 |
+| **1.14.2** | Vérifiez que les signatures binaires, les connexions de confiance et les terminaux vérifiés sont utilisés pour déployer les binaires sur les appareils distants. | | ✓ | ✓ | 923 |
+| **1.14.3** | Vérifier que les signatures binaires, les connexions de confiance et les nœuds vérifiés sont utilisés pour déployer des binaires sur des dispositifs distants. | | ✓ | ✓ | 494 |
+| **1.14.4** | Vérifier que le pipeline de construction signale les composants obsolètes ou peu sûrs et prend les mesures appropriées. | | ✓ | ✓ | 1104 |
 | **1.14.5** | Vérifier que le pipeline de construction contient une étape de compilation pour créer automatiquement et vérifier le déploiement sécurisé de l'application, en particulier si l'infrastructure de l'application est définie par un logiciel, comme les scripts de construction d'un environnement en nuage. | | ✓ | ✓ | |
-| **1.14.6** | Vérifier que les déploiements d'applications sont correctement sandboxés, conteneurisés et/ou isolés au niveau du réseau pour retarder et dissuader les attaquants d'attaquer d'autres applications, en particulier lorsqu'ils effectuent des actions sensibles ou dangereuses telles que la désérialisation. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | [265](https://cwe.mitre.org/data/definitions/265.html) |
-| **1.14.7** | Vérifiez que l'application n'utilise pas de technologies côté client non prises en charge, peu sûres ou dépréciées telles que les plugins NSAPI, Flash, Shockwave, ActiveX, Silverlight, NACL ou les applets Java côté client. | | ✓ | ✓ | [477](https://cwe.mitre.org/data/definitions/477.html) |
+| **1.14.6** | Vérifier que les déploiements d'applications sont correctement sandboxés, conteneurisés et/ou isolés au niveau du réseau pour retarder et dissuader les attaquants d'attaquer d'autres applications, en particulier lorsqu'ils effectuent des actions sensibles ou dangereuses telles que la désérialisation. ([C5](https://owasp.org/www-project-proactive-controls/#div-numbering)) | | ✓ | ✓ | 265 |
+| **1.14.7** | Vérifiez que l'application n'utilise pas de technologies côté client non prises en charge, peu sûres ou dépréciées telles que les plugins NSAPI, Flash, Shockwave, ActiveX, Silverlight, NACL ou les applets Java côté client. | | ✓ | ✓ | 477 |
 
 ## Références
 
