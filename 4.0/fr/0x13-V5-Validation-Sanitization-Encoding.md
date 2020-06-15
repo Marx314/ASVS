@@ -101,7 +101,7 @@ Pour plus d'informations sur l'évasion automatique, veuillez consulter
 * [Angular Sanitization](https://angular.io/guide/security#sanitization-and-security-contexts)
 * [Angular Template Security](https://angular.io/guide/template-syntax#content-security)
 * [ReactJS Escaping](https://reactjs.org/docs/introducing-jsx.html#jsx-prevents-injection-attacks)
-* [Improperly Controlled Modification of Dynamically-Determined Object Attributes
+* [Improperly Controlled Modification of Dynamically-Determined Object Attributes](https://cwe.mitre.org/data/definitions/915.html)
 
 Pour plus d'informations sur la désérialisation, veuillez consulter
 
